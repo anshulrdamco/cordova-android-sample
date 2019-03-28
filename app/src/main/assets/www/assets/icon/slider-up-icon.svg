@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 46 21" style="enable-background:new 0 0 46 21;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#D1D3D4;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+	.st2{display:none;fill:none;stroke:#D1D3D4;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M23.3,7.6l6.5,6.5l-1.5,1.5l-5-5l-5,5l-1.5-1.5L23.3,7.6z"/>
+<g id="Semi_Circle">
+	<g>
+		<path class="st0" d="M22.8,6C10.6,6,0.6,12.7,0,21h45.8C45.1,12.7,35.2,6,22.8,6z"/>
+	</g>
+</g>
+<line id="Up_1_" class="st1" x1="11.2" y1="17.9" x2="22.9" y2="13"/>
+<line id="Up" class="st1" x1="22.9" y1="13" x2="34.5" y2="17.9"/>
+<line id="Down_1_" class="st2" x1="34.5" y1="13" x2="22.9" y2="17.9"/>
+<line id="Down" class="st2" x1="22.9" y1="17.9" x2="11.2" y2="13"/>
+<g id="Layer_2_1_">
+</g>
+</svg>

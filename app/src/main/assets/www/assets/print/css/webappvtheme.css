@@ -1,0 +1,512 @@
+body {font-family: Arial, Helvetica, sans-serif; font-size: 14px !important}
+div#printable div.ljPrintableContainer div.ui-grid-a .ui-block-a { width: 100% !important}    
+/*path {stroke:#5aa210 !important;  }*/
+.walkingStep h4 {background:#eaeaea; padding: 10px; border: 1px solid #ccc; color: black; font-size: 14px; margin:0px !important;}
+.ui-block-a h1 {background:#eaeaea; padding: 10px !important; margin: 10px; border: 1px solid #ccc; color: black !important; font-size: 14px !important}
+.scroll-content {overflow-y:hidden !important;}
+
+
+p.startend span {display: block; padding: 10px;  border: 1px solid #ccc;}
+ul.directions li,p.startend span {color:#444 !important}
+p.startend span:last-child {border-top: none !important}
+ul.directions {margin: 0px;}
+ul.directions li { padding: 5px;position: relative; display: block;border: 1px solid #ccc !important; left: 0px !important; margin: 0px !important; border-collapse: collapse; border-top: 0px solid transparent!important}
+.directionIcon {
+    display: block;
+    width: 38px;
+    height: 25px;
+    right: 10px;
+    top: 8px;
+    float: right;  
+    background-position: center !important;
+  }
+  .ui-block-a{ width:100%;}
+   table.walkingSteps {border-spacing: 0px !important;width:100% !important}
+   .ui-block-a h1 {margin: 10px 0px}
+  li.directionItem {display: block; position: relative; padding: 5px 5px 5px 10px !important}
+  div#printable div.ljPrintableContainer p.startend, p.startend {white-space: normal !important; margin-bottom: 20px;}
+  div#printable div.mappingDiv {width: 100%}
+  .directionsContainer h2 {display: none}
+
+  .ui-content {width: 100%; overflow: hidden;}
+
+  div#printable div.ljPrintableContainer div.directionsContainer {padding: 0px !important}
+
+
+  .directionItem span {float: left;}
+  .directionItem span:last-child {max-width:85%}
+  .directionItem span.directionIcon {float: right}
+  div.ui-content {padding-top: 20px;}
+.printingIcon {
+    /* background-position: right; */
+    height: 35px;
+    width: 130px !important;
+    margin-top: 10px;
+    border:none !important;
+    top: -7px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    border-radius: 4px;
+    right: 16px;
+    font-size: 14px !important;
+    background-color:#79ABCB !important;
+    margin: 17px;
+    font-weight:bold;
+    padding: 0px 10px;
+}
+
+  div#printable div.mappingDiv {background: #fff}
+  
+  div.mappingParentDiv {margin-left: 0px !important; min-width: 100% !important; margin:0px 0px 20px 0px !important ;}
+  #print-button-container + .ui-block-a {min-width: 702px !important; max-width: 700px !important; width: 700px !important;}
+  div.mappingDiv svg.mapThumbnail {
+    /* max-width:683px !important;
+    min-width:683px !important;
+    width:683px !important; */
+    max-width:700px !important;
+    min-width:700px !important;
+    width:700px !important; 
+  
+    border-width:1px !important;
+    border:1px solid #ccc !important;
+    border-spacing:0px;
+  }
+  li.directionItem span {padding-right: 5px !important}
+  
+  div#printable div.ljPrintableContainer .printFooter {display: none;}
+
+  .start {
+  background: transparent url(/assets/icon/start-Dot.svg) no-repeat 0 0;
+  }
+  
+  .right{
+    background: transparent url(/assets/icon/go-right.svg) no-repeat 0 0;
+  }
+  
+  .left{
+    background: transparent url(/assets/icon/go-left.svg) no-repeat 0 0;
+  }
+  
+  .parking{
+    background: transparent url(/assets/icon/parking.svg) no-repeat 10px 0;
+  }
+
+  .stepsAccordion ul li .parking{
+    background: transparent url(/assets/icon/parking.svg) no-repeat 10px 0;
+  }
+  
+  .slide-zoom .parking {
+    background: transparent url(/assets/icon/parking.svg) no-repeat 2px 14px;
+    max-height:90%;
+  }
+
+  .straight{
+    background: transparent url(/assets/icon/go-straight.svg) no-repeat 0 0;
+  }
+  
+  .elevator{
+    background: transparent url(/assets/icon/elevator.svg) no-repeat 0 0;
+  }
+  
+  .end{
+    background: transparent url(/assets/icon/DestinationEnd-red.svg) no-repeat 0 0;
+  }
+  
+  .back{
+    background: transparent url(/assets/icon/arrow-down.svg) no-repeat 0 0;
+  }
+  
+  .slightRight{
+    background: transparent url(/assets/icon/slight-right.svg) no-repeat 0 0;
+  }
+  
+  .slightLeft{
+    background: transparent url(/assets/icon/slight-left.svg) no-repeat 0 0;
+  }
+
+  .escalator{
+    background: transparent url(/assets/icon/escalator.svg) no-repeat 0 0;
+  }
+  .entrance{
+    background: transparent url(/assets/icon/entrance-exit.svg) no-repeat 0 0;
+  }
+  .sidewalk {
+    background: transparent url(/assets/icon/sidewalk-icon.svg) no-repeat 0 0;
+  }
+  .exit{
+    background: transparent url(/assets/icon/entrance-exit.svg) no-repeat 0 0;
+  }
+  .stairs{
+    background: transparent url(/assets/icon/stairs.svg) no-repeat 0 0;
+  }
+
+  .turn-sharp-left{
+    background: transparent url(/assets/icon/sharp_left.svg) no-repeat 0 0;
+  }
+  .uturn-right{
+    background: transparent url(/assets/icon/U-turn-right.svg) no-repeat 0 0;
+  }
+  .turn-slight-right{
+    background: transparent url(/assets/icon/slight-right.svg) no-repeat 0 0;
+  }
+  .merge{
+    background: transparent url(/assets/icon/merge-lane.svg) no-repeat 0 0;
+  }
+  .roundabout-left{
+    background: transparent url(/assets/icon/round-about-Left.svg) no-repeat 0 0;
+  }
+  .roundabout-right{
+    background: transparent url(/assets/icon/round-about-Right.svg) no-repeat 0 0;
+  }
+  .uturn-left{
+    background: transparent url(/assets/icon/U-turn-left.svg) no-repeat 0 0;
+  }
+  .turn-slight-left{
+    background: transparent url(/assets/icon/slight-left.svg) no-repeat 0 0;
+  }
+  .turn-sharp-right{
+    background: transparent url(/assets/icon/sharp_right.svg) no-repeat 0 0;
+  }
+  .fork-right{
+    background: transparent url(/assets/icon/fork_slight_right.svg) no-repeat 0 0;
+  }
+  
+  .fork-left{
+    background: transparent url(/assets/icon/fork_slight_left.svg) no-repeat 0 0;
+  }
+  .ferry{
+    background: transparent url(/assets/icon/ship.svg) no-repeat 0 0;
+  }
+  .ramp-right{
+    background: transparent url(/assets/icon/off_ramp_slight_right.svg) no-repeat 0 0;
+  }
+  .ferry-train{
+    background: transparent url(/assets/icon/auto-serviss.svg) no-repeat 0 0;
+  }
+  .ramp-left{
+    background: transparent url(/assets/icon/off_ramp_slight_left.svg) no-repeat 0 0;
+  }
+  .keep-right{
+    background: transparent url(/assets/icon/keep-right.svg) no-repeat 0 0;
+  }
+  .keep-left{
+    background: transparent url(/assets/icon/keep-left.svg) no-repeat 0 0;
+  }
+
+  #ljPrintableContainer{
+    padding-top:30px;
+}
+  .ui-content {
+      padding: 0 1em;
+  }        
+
+  #print-button-container {
+      position: fixed;
+      top:0;
+      right:0;
+      left:0;
+      display: block;
+      height: 31px;
+      z-index: 1000;
+      background:rgba(255,255,255,0.8);  
+      height: 60px;
+  }
+
+  #printingIcon {
+      width: 64px;
+      border-radius: 6px;
+      height: 34px;
+      font-size: 13.33px;
+      line-height: 13.33px;
+      font-weight: 400;
+      float: right;
+      margin-top: 5px;
+      margin-right: 2px;
+  }
+
+  .google-map-image{
+    width:683px;
+    border:1px solid #ccc;
+  }
+  div#printable table.adp-directions
+  {
+    border:1px solid #ccc;
+  }
+
+  /* #mapsDirections {max-width:97%;} */
+  #ljPrintableContainer {max-width:94%;}
+  div#printable div.mappingDiv {background: none !important;}
+  @media print and (color) {
+    * {
+       -webkit-print-color-adjust: exact;
+       print-color-adjust: exact;
+      
+    }
+    /* table.walkingSteps
+    {overflow: hidden} */
+
+    /* td .walkingStep {page-break-before: always !important;  border: 5px solid blue; overflow: hidden} */
+    
+    /* .mappingParentDiv
+    { border: 5px solid blue}  */
+
+    /* float: left; */
+    .mappingParentDiv {min-height:254px;  overflow: hidden;}
+    ul.directions {overflow:hidden;}
+    div.mappingDiv svg.mapThumbnail {min-height: 250px; max-height: 250px}
+    .google-map-image{
+      width:683px;
+      border:1px solid #ccc;
+    }
+
+    #ljPrintableContainer{
+        padding:0 0px 50px 0px;
+    }
+
+    .google-map-image
+    {
+      width: 100%;
+    }
+
+    div#printable table.adp-directions
+    {
+      border:1px solid #ccc;      
+    }
+
+    #ljPrintableContainer {max-width:98%;}
+
+    body, html {background: #FFF;}
+    div.ui-content {overflow-x: hidden; }
+    @page {margin:2cm !important }
+    /* .walkingStepsDiv div.coverUp {max-width:99% !important; border-right:1px solid #ccc; background: #fff} */
+ /* table.walkingSteps {max-width:98% !important; width:98% !important;} */
+    .ui-content {width: 100%;max-width:100%; }
+    .ui-content {padding: 0px !important}
+    div.mappingParentDiv {margin-left: 0px !important; min-width: 100% !important; }
+    div#printable div.mappingDiv {width: 100%; min-height: 254px;overflow: hidden;}
+    div.mappingDiv svg.mapThumbnail {background-color:#ccc;}
+    div.mappingDiv svg.mapThumbnail {max-width:100% !important;min-width:100% !important;width:100% !important;}
+    .printingIcon {display: none}
+
+    #print-button-container + .ui-block-a {max-width: 100% !important; width: 100% !important; min-width: 100% !important; }
+
+
+
+    .start {
+      background: transparent url(/assets/icon/print/start-Dot.png) no-repeat 0 0;
+      }
+      
+      .right{
+        background: transparent url(/assets/icon/print/go-right.png) no-repeat 0 0;
+      }
+      
+      .left{
+        background: transparent url(/assets/icon/print/go-left.png) no-repeat 0 0;
+      }
+      
+      .parking{
+        background: transparent url(/assets/icon/print/parking.png) no-repeat 10px 0;
+      }
+    
+      .stepsAccordion ul li .parking{
+        background: transparent url(/assets/icon/print/parking.png) no-repeat 10px 0;
+      }
+      
+      .slide-zoom .parking {
+        background: transparent url(/assets/icon/print/parking.png) no-repeat 2px 14px;
+        max-height:90%;
+      }
+    
+      .straight{
+        background: transparent url(/assets/icon/print/go-straight.png) no-repeat 0 0;
+      }
+      
+      .elevator{
+        background: transparent url(/assets/icon/print/elevator.png) no-repeat 0 0;
+      }
+      
+      .end{
+        background: transparent url(/assets/icon/print/DestinationEnd-red.png) no-repeat 0 0;
+      }
+      
+      .back{
+        background: transparent url(/assets/icon/print/arrow-down.png) no-repeat 0 0;
+      }
+      
+      .slightRight{
+        background: transparent url(/assets/icon/print/slight-right.png) no-repeat 0 0;
+      }
+      
+      .slightLeft{
+        background: transparent url(/assets/icon/print/slight-left.png) no-repeat 0 0;
+      }
+    
+      .escalator{
+        background: transparent url(/assets/icon/print/escalator.png) no-repeat 0 0;
+      }
+      .entrance{
+        background: transparent url(/assets/icon/print/entrance-exit.png) no-repeat 0 0;
+      }
+      .sidewalk {
+        background: transparent url(/assets/icon/print/sidewalk-icon.png) no-repeat 0 0;
+      }
+      .exit{
+        background: transparent url(/assets/icon/print/entrance-exit.png) no-repeat 0 0;
+      }
+      .stairs{
+        background: transparent url(/assets/icon/print/stairs.png) no-repeat 0 0;
+      }
+    
+      .turn-sharp-left{
+        background: transparent url(/assets/icon/print/sharp_left.png) no-repeat 0 0;
+      }
+      .uturn-right{
+        background: transparent url(/assets/icon/print/U-turn-right.png) no-repeat 0 0;
+      }
+      .turn-slight-right{
+        background: transparent url(/assets/icon/print/slight-right.png) no-repeat 0 0;
+      }
+      .merge{
+        background: transparent url(/assets/icon/print/merge-lane.png) no-repeat 0 0;
+      }
+      .roundabout-left{
+        background: transparent url(/assets/icon/print/round-about-Left.png) no-repeat 0 0;
+      }
+      .roundabout-right{
+        background: transparent url(/assets/icon/print/round-about-Right.png) no-repeat 0 0;
+      }
+      .uturn-left{
+        background: transparent url(/assets/icon/print/U-turn-left.png) no-repeat 0 0;
+      }
+      .turn-slight-left{
+        background: transparent url(/assets/icon/print/slight-left.png) no-repeat 0 0;
+      }
+      .turn-sharp-right{
+        background: transparent url(/assets/icon/print/sharp_right.png) no-repeat 0 0;
+      }
+      .fork-right{
+        background: transparent url(/assets/icon/print/fork_slight_right.png) no-repeat 0 0;
+      }
+      
+      .fork-left{
+        background: transparent url(/assets/icon/print/fork_slight_left.png) no-repeat 0 0;
+      }
+      .ferry{
+        background: transparent url(/assets/icon/print/ship.png) no-repeat 0 0;
+      }
+      .ramp-right{
+        background: transparent url(/assets/icon/print/off_ramp_slight_right.png) no-repeat 0 0;
+      }
+      .ferry-train{
+        background: transparent url(/assets/icon/print/auto-serviss.png) no-repeat 0 0;
+      }
+      .ramp-left{
+        background: transparent url(/assets/icon/print/off_ramp_slight_left.png) no-repeat 0 0;
+      }
+      .keep-right{
+        background: transparent url(/assets/icon/print/keep-right.png) no-repeat 0 0;
+      }
+      .keep-left{
+        background: transparent url(/assets/icon/print/keep-left.png) no-repeat 0 0;
+      }
+  
+      lj-map img[alt='parking']{
+        background: transparent url(/assets/icon/print/parking.png) no-repeat 10px 0 !important;
+      }
+      
+      lj-map img[alt='elevator']
+      {
+              background: transparent url(/assets/icon/print/elevator.png) no-repeat 0 -3px !important;
+      }
+      lj-map img[alt='end']
+      {
+        background: transparent url(/assets/icon/print/DestinationEnd-red.png) no-repeat -7px 0 !important;
+        margin-top: -35px !important;
+      }
+      lj-map img[alt='escalator']
+      {
+        background: transparent url(/assets/icon/print/escalator.png) no-repeat 0 0 !important;
+        margin-top: -25px !important;
+      }
+      lj-map img[alt='entrance']
+      {
+        background: transparent url(/assets/icon/print/entrance-exit.png) no-repeat 0 0 !important;
+        margin-top: -25px !important;
+      }
+      lj-map img[alt='exit']
+      {
+        background: transparent url(/assets/icon/print/entrance-exit.png) no-repeat 0 0 !important;
+        margin-top: -25px !important;
+      }
+      lj-map img[alt='stairs']
+      {
+        background: transparent url(/assets/icon/print/stairs.png) no-repeat 0 0 !important;
+      }
+  
+      lj-map img[alt='sidewalk']
+      {
+        background: transparent url(/assets/icon/print/sidewalk-icon.png) no-repeat 0 0 !important;
+        margin-top: -25px !important;
+        background-size: 31px !important;
+      }
+      lj-map .leaflet-marker-icon {
+        width: 40px !important;
+        height: 40px !important;
+        margin-top: -35px !important;
+        background-size: 30px 30px !important;
+        padding-left: 0px;
+    }
+    
+
+    div.mappingDiv svg.mapThumbnail {max-width:100% !important; width: 100% !important; border-width:1px !important; border:1px solid #ccc !important; border-spacing:0px;}
+
+    ul.directions li{
+      list-style-type: none;
+      /* min-height: 28px; */
+      position: relative;
+      
+
+  }
+  li.directionItem span.directionIcon
+  {
+      display: block;
+  }
+      ul.directions li.directionItem span.directionIcon{
+          right: 5px;
+          width: 28px !important;
+          height: 28px !important;
+          background-size:20px 23px !important;
+          top: 6px;
+          float: left;
+          position: absolute;
+          background-position: center;
+      }
+   
+    .printCircleMarker {
+        background: url('/assets/icon/print/search-box-circle-black.png') no-repeat 0px 0px !important;  
+    }
+    .printLocationMarker  {
+        background: url('/assets/icon/print/location-black.png') no-repeat 0px 0px !important;  
+        width: 20px !important;
+        height:20px  !important;
+        background-size:65% 65% !important;
+    }
+    
+    /* table.walkingSteps tr:first-child { page-break-inside: avoid}/ */
+    table.walkingSteps tr:first-child .walkingStep{page-break-before:avoid}
+    .walkingStep {overflow: hidden; page-break-before:always}
+     /* div.directionsContainer['data-google-visible=true'] .walkingStep {overflow: hidden; page-break-before:always}  */
+   
+    #ljPrintableContainer div.directionsContainer[data-google-visible='true1']{
+      page-break-after:always;
+      /* border:1px solid red;
+      overflow: hidden; */
+    }
+    #ljPrintableContainer div.directionsContainer[data-google-visible='true3']{
+      page-break-before:always; 
+      /* overflow: hidden; */
+    }
+
+  }
+  

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="2" />
+    </clipPath>
+  </defs>
+  <g id="Destination_Dots" data-name="Destination Dots" class="cls-2">
+    <g transform="translate(-21 -224)">
+      <circle id="Ellipse_41" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -218)">
+      <circle id="Ellipse_41-2" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -212)">
+      <circle id="Ellipse_41-3" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -206)">
+      <circle id="Ellipse_41-4" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -200)">
+      <circle id="Ellipse_41-5" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -194)">
+      <circle id="Ellipse_41-6" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -188)">
+      <circle id="Ellipse_41-7" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -182)">
+      <circle id="Ellipse_41-8" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+    <g transform="translate(-21 -176)">
+      <circle id="Ellipse_41-9" data-name="Ellipse 41" class="cls-3" cx="1" cy="1" r="1" transform="translate(21 224)"/>
+    </g>
+  </g>
+</svg>

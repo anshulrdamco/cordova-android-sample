@@ -1,0 +1,140 @@
+{
+	"Status": "Success",
+	"Response": {
+		"html_attributions": [],
+		"result": {
+			"address_components": [
+				{
+					"long_name": "California",
+					"short_name": "CA",
+					"types": [
+						"administrative_area_level_1",
+						"political"
+					]
+				},
+				{
+					"long_name": "United States",
+					"short_name": "US",
+					"types": [
+						"country",
+						"political"
+					]
+				}
+			],
+			"adr_address": "<span class=\"region\">California</span>, <span class=\"country-name\">USA</span>",
+			"formatted_address": "California, USA",
+			"geometry": {
+				"location": {
+					"lat": 36.778261,
+					"lng": -119.4179324
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 42.0095169,
+						"lng": -114.131211
+					},
+					"southwest": {
+						"lat": 32.528832,
+						"lng": -124.482003
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/geocode-71.png",
+			"id": "b993df4055071925c7950dc2afd22c0b98f994e0",
+			"name": "California",
+			"photos": [
+				{
+					"height": 640,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/115553624458006795149/photos\">AS Khan</a>"
+					],
+					"photo_reference": "CmRaAAAAM72Q8wCjP9kUI1sm8Hv0Qr5YlfOgNZqWUDRWU7ihHVd9bA--ewvRGubutRwfyYURRPfHPCMPK48QMwzi4BjbxLz7D_Lg8IE4s9e7wmXYp_-h4FQMw5k18NuW-ydAMlhAEhAn0lc1VvDMHFd3EVxMHiTUGhTiLTKfl5K3xRHKNP7sue-9JbGMMQ",
+					"width": 640
+				},
+				{
+					"height": 2848,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/101539596651640464951/photos\">Женя Тарасов</a>"
+					],
+					"photo_reference": "CmRaAAAAvVJZscEgbjLZYUzlKnE-vSM-KSrbaH2fNetqsq6HtGJJjqJkAhNGvEN9oJT7aCNERTCmBuj9yRsEq17FX7-GZcbzqUtTgDPDPWo8F3IAFhLyBcfwkoNOUZuRX8hY36zHEhCfpSxcfwABwdF5TL7oZUKGGhT8c78GEWpvNQxKVDj40EJevMO6nA",
+					"width": 4288
+				},
+				{
+					"height": 1222,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/101046882135806425785/photos\">Ira Gon</a>"
+					],
+					"photo_reference": "CmRaAAAAoU6ZgXb0881fRkaTT0k_QUq46sYeyIlBFohPH4EsQ47BtjEtTkp5XfwB-AK7cJAaBZbLW5R_F_5_B3wsTKMUpiUTs2GZAsWaPSouZzIxCnf-LP5Z0fCh-ID5hcxDvLeOEhCLMWiwnnql5-v-Wvg9SfMWGhRQThu6LUUe4j-_llBYWacNZLxv-g",
+					"width": 2048
+				},
+				{
+					"height": 496,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/117596205176951318129/photos\">Anita Bauer</a>"
+					],
+					"photo_reference": "CmRaAAAAUK89KxZ9zs_EvLX6p_r7Hpns1h_ga7TK0etMdt587RxyUnxB9XrGDafZtkmgPYzm8IjEP8h_8w9VT_4uvF0xrNuw6fOzB_FGSjPBxgDTMUJyMc-bCInUbbbPmxOsB8U3EhAL3nONYH4iUZCwuVvLK71_GhS9ZiYDTfN1W3M_20O_YYm3-_Ax5g",
+					"width": 720
+				},
+				{
+					"height": 479,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/115553624458006795149/photos\">AS Khan</a>"
+					],
+					"photo_reference": "CmRaAAAAofKcWKpTUFuibyvOGL0p-wFlLCIbjhBfaXO17_pK2ZEs8IgBpooeY0Z-L7rjdIQNeK8E10IkxOsHK32LoAa1vKysBg8Bzo_pFe7r5BlCCmU2QWGvLZbikR5_qvgJcgaiEhD0CBhKnOdbT6FE4Zai2jsQGhTXNta3QFQIalaf97790U6MYEV0Bg",
+					"width": 640
+				},
+				{
+					"height": 2560,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/105831446170814801795/photos\">احزن من قلب</a>"
+					],
+					"photo_reference": "CmRaAAAAl-YDiExtu3ebFdk8bt_CztJL-eKjAzYXdWuyPF-Q7Poldre6NKNmQ9k-8AYQr4_JBMNxD8Y8qCsnQTu633ArL6n2bTczK0irQFIsQbVOBSjiSvl-Rt5pfxvMG5x71mX5EhCmDO7oWs0Tjf1caN0WXV_sGhTbpbA16oiyuiHGylLsiYHSQ_y6Mw",
+					"width": 1440
+				},
+				{
+					"height": 720,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/115553624458006795149/photos\">AS Khan</a>"
+					],
+					"photo_reference": "CmRaAAAAFox6BsKfF2dcl6RI466nahy2LHk7_R7DFjz6MVcoDeN5jCTwi0lhYols8oujWRq56nB0ISVyR_YSUiKARJda22EShNZp0eRHMDcImKLr0z5M5usgJzgnNVeAaSybYRmoEhCMutIPIxDRHfJMkib3qoLyGhR1czhK-durllnPZLsXgvTgiqQXEg",
+					"width": 1104
+				},
+				{
+					"height": 2848,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/101539596651640464951/photos\">Женя Тарасов</a>"
+					],
+					"photo_reference": "CmRaAAAAYgqp0UG3YwC7E-8sQco5BTHUWMgLKAlLGTTdmaPF7EtuXUzFwDog4l-8HPCwnroPDO4wYH2Gg50FQamNXL5T3pwSy0AAcX1flzvJt_QZPzxA9vFsxpiABARAj341ZzJ6EhA2kS-BVXpHz9sCOAMriBKIGhTPf_-iICIeM819tCN6DckvBpSpWg",
+					"width": 4288
+				},
+				{
+					"height": 2268,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/109458020284530120320/photos\">Cara Dillabough</a>"
+					],
+					"photo_reference": "CmRaAAAAoB4vsQ7rZuXn-XFbvFY6kGMxv1m4iVl_ZclPjuUba7eXtFWDbwGKwXQyQ8tAfm7Hovi3swf1Lz554igsnjSZb8MbP_rY26fRnztsRULj4IPbXzYMH-_hWa0RcLEL6RojEhAb85fSDys5NxQ-kbE1v_JNGhRqwAwqBLXM9Xg5yZ1hMRWv4QcM9w",
+					"width": 4032
+				},
+				{
+					"height": 1920,
+					"html_attributions": [
+						"<a href=\"https://maps.google.com/maps/contrib/100236597939696323545/photos\">Андрей Баранов</a>"
+					],
+					"photo_reference": "CmRaAAAAVD996NrnHE_mJoFJghjdJwk_fMJLzMZZRKXY9X0_Me8ckKbYCtcBgV7iWuGjK4_Z_duMvJ2PZNry4JbBdeyu1UaLi9TwInm9ViQPa7TsVUrH5gKCQ584aHV9_WmGuJoqEhC4GmyEoszhuFfTQ0rQpczYGhS_j9zIUBsd7vhGzcLh8MwfzHFY2g",
+					"width": 2560
+				}
+			],
+			"place_id": "ChIJPV4oX_65j4ARVW8IJ6IJUYs",
+			"reference": "CmRbAAAAwwn9JuVCOq4gSiTABCaerE_cZKsVOQ6AQVB74T4r-V1kE2GHyrLHtdlHH3mp11UMsAXjrxM8ZDcZyiuohT8SfHbHxmBetMO6bzr-0joPEzuIcPDMmirFaeCni0bXLMEeEhB-PHEON2GN4JK2DeVoEv9EGhRnibtKNTwLNXRvx1cLzLip-SLL4w",
+			"scope": "GOOGLE",
+			"types": [
+				"administrative_area_level_1",
+				"political"
+			],
+			"url": "https://maps.google.com/?q=California,+USA&ftid=0x808fb9fe5f285e3d:0x8b5109a227086f55",
+			"utc_offset": -420
+		},
+		"status": "OK"
+	},
+	"Message": ""
+}

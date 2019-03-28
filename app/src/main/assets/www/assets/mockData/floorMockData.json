@@ -1,0 +1,218 @@
+[
+		{
+			"FloorPlanId": 19123,
+			"FloorName": "the basement",
+			"FloorOrder": 0,
+			"FloorId": 1,
+			"FloorFileName": "1269-thebasement.svg",
+			"Abbreviation": "B",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19124,
+			"FloorName": "the eighth floor",
+			"FloorOrder": 8,
+			"FloorId": 2,
+			"FloorFileName": "1269-theeighthfloor.svg",
+			"Abbreviation": "8",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19125,
+			"FloorName": "the eleventh floor",
+			"FloorOrder": 11,
+			"FloorId": 3,
+			"FloorFileName": "1269-theeleventhfloor.svg",
+			"Abbreviation": "11",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19126,
+			"FloorName": "the external grounds",
+			"FloorOrder": 16,
+			"FloorId": 4,
+			"FloorFileName": "1269-theexternalgrounds.svg",
+			"Abbreviation": "EX",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19127,
+			"FloorName": "the fifth floor",
+			"FloorOrder": 5,
+			"FloorId": 5,
+			"FloorFileName": "1269-thefifthfloor.svg",
+			"Abbreviation": "5",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19128,
+			"FloorName": "the first floor",
+			"FloorOrder": 1,
+			"FloorId": 6,
+			"FloorFileName": "1269-thefirstfloor.svg",
+			"Abbreviation": "1",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19129,
+			"FloorName": "the fourth floor",
+			"FloorOrder": 4,
+			"FloorId": 7,
+			"FloorFileName": "1269-thefourthfloor.svg",
+			"Abbreviation": "4",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19130,
+			"FloorName": "the JJ tunnel",
+			"FloorOrder": 15,
+			"FloorId": 8,
+			"FloorFileName": "1269-thejjtunnel.svg",
+			"Abbreviation": "JJ",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19131,
+			"FloorName": "the ninth floor",
+			"FloorOrder": 9,
+			"FloorId": 9,
+			"FloorFileName": "1269-theninthfloor.svg",
+			"Abbreviation": "9",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19132,
+			"FloorName": "the rooftop pavilion",
+			"FloorOrder": 13,
+			"FloorId": 10,
+			"FloorFileName": "1269-therooftoppavilion.svg",
+			"Abbreviation": "RT",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19133,
+			"FloorName": "the second floor",
+			"FloorOrder": 2,
+			"FloorId": 11,
+			"FloorFileName": "1269-thesecondfloor.svg",
+			"Abbreviation": "2",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19134,
+			"FloorName": "the seventh floor",
+			"FloorOrder": 7,
+			"FloorId": 12,
+			"FloorFileName": "1269-theseventhfloor.svg",
+			"Abbreviation": "7",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19135,
+			"FloorName": "the sixth floor",
+			"FloorOrder": 6,
+			"FloorId": 13,
+			"FloorFileName": "1269-thesixthfloor.svg",
+			"Abbreviation": "6",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19136,
+			"FloorName": "the skyway level",
+			"FloorOrder": 14,
+			"FloorId": 14,
+			"FloorFileName": "1269-theskywaylevel.svg",
+			"Abbreviation": "SK",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19137,
+			"FloorName": "the street level",
+			"FloorOrder": 17,
+			"FloorId": 15,
+			"FloorFileName": "1269-thestreetlevel.svg",
+			"Abbreviation": "SL",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19138,
+			"FloorName": "the tenth floor",
+			"FloorOrder": 10,
+			"FloorId": 16,
+			"FloorFileName": "1269-thetenthfloor.svg",
+			"Abbreviation": "10",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19139,
+			"FloorName": "the third floor",
+			"FloorOrder": 3,
+			"FloorId": 17,
+			"FloorFileName": "1269-thethirdfloor.svg",
+			"Abbreviation": "3",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		},
+		{
+			"FloorPlanId": 19140,
+			"FloorName": "the twelfth floor",
+			"FloorOrder": 12,
+			"FloorId": 18,
+			"FloorFileName": "1269-thetwelfthfloor.svg",
+			"Abbreviation": "12",
+			"MapOverlayParamJSONData": {
+				"Bound": "[41.50613, -81.61117],[41.49908, -81.62788]",
+				"Rotation": ""
+			}
+		}
+	]

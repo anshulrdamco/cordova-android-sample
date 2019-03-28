@@ -1,0 +1,1913 @@
+html, body {
+    -ms-content-zooming: none;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    user-select: none; /*IE 10+*/
+    -ms-user-select: none; /*IE 10+*/
+    -o-user-select: none;
+    user-select: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+    scrollbar-base-color: #444;
+    scrollbar-base-color: #444;
+    scrollbar-3dlight-color: #444;
+    scrollbar-highlight-color: #444;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: #000;
+    scrollbar-shadow-color: #C0444C0C0;
+    scrollbar-dark-shadow-color: #C4440C0C0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+body {
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    font-size: 16px;
+}
+
+#SVGBox {
+    touch-action: none;
+}
+
+.centerObject {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+div.fullpage {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+    div.fullpage.rightTabs {
+        height: 50%;
+        width: 100%;
+        position: fixed;
+    }
+
+    div.fullpage.rightOut {
+        height: 50%;
+        width: 100%;
+        position: fixed;
+    }
+
+    div.fullpage.leftOut {
+        height: 50%;
+        width: 100%;
+        position: fixed;
+    }
+
+    div.fullpage.NavBarVisible {
+        height: 50%;
+        top: 0;
+    }
+
+div.MapNavBar {
+    height: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+    div.MapNavBar.rightTabs {
+        width: 80%;
+    }
+
+    div.MapNavBar.rightOut {
+        width: 39%;
+    }
+
+    div.MapNavBar.leftOut {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    div.MapNavBar.NavBarVisible {
+        height: 5%;
+        z-index: 500;
+        color: #fff;
+    }
+
+.mainRightSlideContainer {
+    float: right;
+    margin-right: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(221,221,221,0.95);
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+}
+
+.mainRightSlideContainerOut {
+    float: right;
+    margin-right: 55%;
+    width: 0%;
+    height: 50%;
+    background-color: rgba(221,221,221,0.95);
+}
+
+.mainRightSlideContainerOutRight {
+    margin-right: 0%;
+}
+
+.sliderContainer {
+    position: relative;
+    display: block;
+    height: auto;
+    width: auto;
+}
+
+div.FloatingLogo {
+    position: absolute;
+    padding: 20px 20px 10px 20px;
+    max-width: 100%;
+    height: auto;
+    bottom: 10px;
+}
+
+.FloatingLogo img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+div.slideout {
+    position: relative;
+    display: block;
+    float: right;
+    right: 0;
+    bottom: 0;
+    margin-right: 0px;
+    width: 100%;
+    padding: 1% 0;
+}
+
+div.slideoutInner {
+    position: fixed;
+    color: #fff;
+    right: -100%;
+    background-color: rgba(23,23,23,0.95);
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+}
+
+
+div.slideoutExtraInner {
+    position: fixed;
+    bottom: 0px;
+    right: -100%;
+    background-color: rgba(0,0,0,0.85);
+    width: 100%;
+    height: 50%;
+    color: #fff;
+}
+
+div.slideout.out, div.slideout.tab {
+    padding: 10px 0 20px 0;
+}
+
+    div.slideout.out .slideoutInner {
+        right: 0;
+    }
+
+    div.slideout.out.extra, div.slideout.tab.extra {
+    }
+
+        div.slideout.out.extra .slideoutInner {
+            right: -100%;
+        }
+
+        div.slideout.out.extra .slideoutExtraInner {
+            right: 0;
+        }
+
+#eventSlideout {
+}
+
+#legendSlideout {
+}
+
+
+.navSlideOut {
+    background: #3c6dbf;
+}
+
+.eventSlideOut {
+    background: #4d7dce;
+}
+
+.legendSlideOut {
+    background: #5f8edb;
+}
+
+
+div.slideout.out {
+    background: #2f2f2f;
+}
+
+
+
+.fullpage h3 {
+    position: absolute;
+    left: -20px;
+    top: -4px;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px 10px 10px 128px;
+    text-align: right;
+    box-shadow: -3px 0px 15px rgba(0,0,0,.30);
+    font-size: 3em;
+}
+/*hide on slide out */
+.hiddenObject {
+}
+
+.hide {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+.portraitHide {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+
+
+/*SLIDE STYLING*/
+
+
+.tabTitle {
+    color: #fff;
+    font-size: 2.4em;
+    display: inline-block;
+}
+
+.tabTitleText {
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+.tabIcons {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: 30%;
+    display: inline-block;
+    float: left;
+}
+
+.tabIconsOut {
+    display: none;
+    float: none;
+}
+
+.navigateicon {
+    background: url('../images/iconSprite_large.png') 0 0;
+}
+
+.eventicon {
+    background: url('../images/iconSprite_large.png') -100px 0;
+}
+
+.legendicon {
+    background: url('../images/iconSprite_large.png') -200px 0;
+}
+
+
+.slideTitle {
+    color: #fff;
+}
+
+legend {
+    width: 80%;
+    font-size: 1.2em;
+}
+
+div.slideoutExtraInner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#DirectionListDiv {
+    height: 700px;
+    direction: ltr;
+    padding-bottom: 20px;
+    margin-top: 30px;
+}
+
+div.slideoutExtraInner .DestinationListTable a {
+    color: #A3D4FF;
+    text-decoration: none;
+}
+
+div.slideoutExtraInner .DestinationListTable tr {
+    border-style: solid;
+    border-bottom: #A3D4FF;
+    border-left: none;
+    border-right: none;
+}
+
+div.slideoutExtraInner .DestinationListTable td {
+    padding-right: 20px;
+}
+
+
+
+/*Button Section*/
+.buttonContainer {
+    position: relative;
+    margin-top: 33%;
+    display: block;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.topButtonSection {
+    position: relative;
+    padding-bottom: 20px;
+    width: 400px;
+    float: left;
+    margin-left: 60px;
+    margin-top: 34px;
+}
+
+.bottomButtonSection {
+    float: left;
+    width: 400px;
+    margin-top: 34px;
+}
+
+.circleButtonContainer {
+    margin: 1% 10% 0 10%;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.quickButton {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    color: #3c6dbf;
+    padding: 5px 0 5px 0px;
+    margin-right: 75px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.bottomButtonSection h2, .topButtonSection h2 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 28px;
+    display: none;
+}
+
+.buttonOut {
+    border-radius: 0px;
+    width: 100%;
+}
+
+.buttonContainerOut {
+    display: none;
+}
+
+
+.EmergencyButton {
+    background-color: #df6363;
+    color: #fff;
+}
+
+.buttonIcon {
+    background: url('../images/iconSprite_large.png');
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.emergencyicon {
+    background-position: -1500px -5px;
+}
+
+.restroomicon {
+    background-position: -1600px -5px;
+}
+
+.startovericon {
+    background-position: -1700px -5px;
+}
+
+.floorlistIcon {
+    background-position: -1400px -5px;
+}
+
+.languageIcon {
+    background: url('../images/iconSprite_large.png') -2300px 0;
+}
+
+.callIcon {
+    background: url('../images/iconSprite_large.png') -2700px 0;
+}
+
+.headerCallIcon {
+    background: url('../images/iconSprite_large.png') -2716px -15px;
+    /*top:-10px;*/
+}
+
+.headerCallIconDirections {
+    background: url('../images/iconSprite_large.png') -2716px -15px;
+}
+
+.languageText {
+    padding-top: 0px;
+    padding-right: 15px;
+}
+
+.printIcon {
+    background-position: -2013px -14px;
+}
+
+.emailIcon {
+    background-position: -1912px -13px;
+}
+
+
+.portraitDontDisplay {
+    display: none;
+}
+
+.languageButton {
+    position: relative;
+    padding: 1% 0;
+    background-color: #3c6dbf;
+    border-radius: 5px;
+    top: 18px;
+    overflow: auto;
+    clear: both;
+    margin: 0 10% 0 10%;
+}
+
+.liveConnectStyle {
+    background-color: #4bc45b;
+    position: relative;
+    display: block;
+    float: right;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin-right: 0px;
+    width: 100%;
+    padding: 1% 0;
+    border-style: none;
+}
+
+.languageText {
+    padding-top: 15px;
+    padding-right: 10px;
+}
+
+/**Pop over**/
+
+
+
+.popover.left {
+    margin-right: 100%;
+    margin-left: -20%;
+    margin-top: 10%;
+}
+
+    .popover.left > .arrow {
+        margin-top: -45px;
+    }
+
+
+.popover-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 150%;
+    color: #3c6dbf;
+}
+
+/**Map Css***/
+
+.mapbox {
+    height: 400px;
+    background:#333;
+}
+
+.mapbox-loading {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.mapbox-loading:after {
+    content: ' .';
+    animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% {
+        color: rgba(0,0,0,0);
+        text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+    }
+
+    40% {
+        color: white;
+        text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0);
+    }
+
+    60% {
+        text-shadow: .25em 0 0 white, .5em 0 0 rgba(0,0,0,0);
+    }
+
+    80%, 100% {
+        text-shadow: .25em 0 0 white, .5em 0 0 white;
+    }
+}
+/**Map control buttons***/
+#mapControlBtns {
+    /*z-index: 4;*/
+    position: absolute;
+    float: left;
+    background: #fff;
+    box-shadow: 0px 0px 13px rgba(0,0,0,.50);
+    padding: 10px 20px;
+}
+
+    #mapControlBtns button {
+        width: 50px;
+        height: 50px;
+        background: url('../images/iconSprite.png');
+        border: none;
+        background-color: #5f8edb;
+        color: #fff;
+        box-shadow: 0px 0px 13px rgba(0,0,0,.50);
+    }
+
+    #mapControlBtns .ZoomInBtn {
+        background-position: -500px 0px;
+    }
+
+    #mapControlBtns .ZoomOutBtn {
+        background-position: -550px 0px;
+    }
+
+    #mapControlBtns .ZoomResetBtn {
+        background-position: -900px 0px;
+    }
+
+    #mapControlBtns .RotateLeftBtn {
+        background-position: -1250px 0px;
+    }
+
+
+    #mapControlBtns .RotateRightBtn {
+        background-position: -1300px 0px;
+    }
+
+.mapControlBtnsSetPosition, .mapControlBtnsRightOpenPosition, .mapControlBtnKeepBottom, .mapControlBtnsSwitchPosition, .mapControlBtnKeepTop {
+    left: 35%;
+    bottom: 50%;
+}
+
+
+/**Map control buttons***/
+.mapControlBtns {
+    /*z-index: 4;*/
+    position: absolute;
+    float: left;
+    background: #fff;
+    box-shadow: 0px 0px 13px rgba(0,0,0,.50);
+    padding: 10px 20px;
+}
+
+    .mapControlBtns button {
+        width: 50px;
+        height: 50px;
+        background: url('../images/iconSprite.png');
+        border: none;
+        background-color: #5f8edb;
+        color: #fff;
+        box-shadow: 0px 0px 13px rgba(0,0,0,.50);
+    }
+
+    .mapControlBtns .ZoomInBtn {
+        background-position: -500px 0px;
+    }
+
+    .mapControlBtns .ZoomOutBtn {
+        background-position: -550px 0px;
+    }
+
+    .mapControlBtns .ZoomResetBtn {
+        background-position: -900px 0px;
+    }
+
+    .mapControlBtns .RotateLeftBtn {
+        background-position: -1250px 0px;
+    }
+
+
+    .mapControlBtns .RotateRightBtn {
+        background-position: -1300px 0px;
+    }
+
+
+    .mapControlBtns.mapControlBtnsSetPosition, .mapControlBtns.mapControlBtnsRightOpenPosition, .mapControlBtns.mapControlBtnKeepBottom, .mapControlBtns.mapControlBtnsSwitchPosition, .mapControlBtns.mapControlBtnKeepTop {
+        left: 35%;
+        bottom: 2%;
+    }
+
+
+/**Slide Out Header and Footer**/
+#slideOutHeader {
+    background-color: #000;
+    width: 100%;
+    height: 10%;
+}
+
+#slideOutFooter {
+    position: absolute;
+    bottom: 0;
+    background-color: #000;
+    width: 100%;
+    height: 10%;
+}
+
+.headerButton, .directionsHeaderButtons {
+    position: relative;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    background-color: #3c6dbf;
+    color: #fff;
+    margin-left: 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.backButton {
+    background-position: -611px -13px;
+}
+
+.homeButton {
+    background-position: -710px -13px;
+}
+
+
+.menuButton, .menuButtonDirection {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 70px;
+    background-color: #3c6dbf;
+    color: #fff;
+    padding: 5px 0 5px 0px;
+    margin-right: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.menuButtonPortrait, .menuButtonDirectionPortrait {
+    position: relative;
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    background-color: #3c6dbf;
+    color: #fff;
+    padding: 5px 0 5px 0px;
+    /* margin-right: 10px; */
+    font-size: 14px;
+    text-align: center;
+}
+
+.menuButtonIcon {
+    background-position: -700px -10px;
+    margin-top: 5px;
+}
+
+.nextPrevButtons {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 100%;
+    background-color: #3c6dbf;
+    color: #fff;
+    padding: 5px 0 5px 0px;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.next {
+    float: right;
+}
+
+    .next p {
+        margin-left: 20px;
+    }
+
+.prev p {
+    margin-left: -50px;
+}
+
+.prev {
+    float: left;
+}
+
+.nextPrevButtons p {
+    display: inline;
+    position: absolute;
+    margin-top: 28px;
+    font-size: 1.7em;
+}
+
+.nextButton {
+    background-position: -1181px;
+    float: right;
+    display: inline;
+    position: relative;
+    margin-top: -7px;
+}
+
+.prevButton {
+    background-position: -1321px;
+    float: left;
+    display: inline;
+    position: relative;
+    margin-top: -7px;
+}
+
+#destination-list-div {
+    overflow: auto;
+     /*height: 100%;*/
+    height: 78%;
+}
+
+.slideOutContent {
+    width: 90%;
+    height: 76%;
+    overflow: auto;
+    padding: 0;
+    margin: 40px 5%;
+    text-align: center;
+    padding-bottom: 40px;
+    font-size: 1.7em;
+    touch-action: pan-y;
+    -ms-touch-action: auto;
+}
+
+.dataListInner .slideOutContent fieldset {
+    overflow: hidden;
+}
+
+.slideOutContent fieldset {
+    height: 100%;
+    width: 98%;
+    touch-action: pan-y;
+}
+
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #444;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #444;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3c6dbf;
+    outline: 16px solid #3c6dbf;
+}
+
+::scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #444;
+}
+
+::scrollbar {
+    width: 10px;
+    background-color: #444;
+}
+
+::scrollbar-thumb {
+    background-color: #3c6dbf;
+    outline: 16px solid #3c6dbf;
+}
+
+#directionsSlideout .slideOutContent fieldset::-webkit-scrollbar-thumb {
+    background-color: #4bc45b;
+    outline: 16px solid #4bc45b;
+}
+
+#directionsSlideout .slideOutContent fieldset::scrollbar-thumb {
+    background-color: #4bc45b;
+    outline: 16px solid #4bc45b;
+}
+
+
+/**IE Scrollbar style**/
+.slideOutContent fieldset {
+    scrollbar-base-color: #3c6dbf;
+    scrollbar-arrow-color: #000;
+    border-color: none;
+    scrollbar-track-color: #444;
+}
+
+#directionsSlideout .slideOutContent fieldset {
+    scrollbar-base-color: #4bc45b;
+    scrollbar-arrow-color: #000;
+    border-color: none;
+    scrollbar-track-color: #444;
+}
+
+
+/**Navigate Slider Inner**/
+#lookupButton {
+    color: #fff;
+    background-color: #3c6dbf;
+    padding: 15px 15px 15px 15px;
+    border: none;
+    margin-top: 10px;
+    width: 40%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navSlideout input {
+    width: 40%;
+    color: #333;
+}
+
+
+#navSlideout ul {
+    padding-left: 0;
+}
+
+    #navSlideout ul li {
+        color: #fff;
+        background-color: #3c6dbf;
+        padding: 10px 10px 10px 20px;
+        border: none;
+        margin-top: 2px;
+        list-style-type: none;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: left;
+    }
+
+
+        #navSlideout ul li h5, #navSlideout ul li h3 {
+            font-size: 1em;
+        }
+
+.buttonArrow {
+    position: relative;
+    display: inline-block;
+    float: right;
+    background: url('../images/leftArrow.png');
+    background-position: -600px;
+    width: 20px;
+    height: 20px;
+    margin-top: -35px;
+}
+
+#navSlideout table {
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+#navSlideout td {
+    padding: 10px;
+    text-align: left;
+}
+
+#Filter {
+    width: 100%;
+    float: left;
+}
+
+div.slideoutExtraInner .filterBtn a {
+    color: #fff;
+    background-color: #3c6dbf;
+    padding: 5px 10px 2px 10px;
+    border: none;
+    list-style-type: none;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    margin-left: 10px;
+}
+
+#destination-list-div table tbody {
+    font-size: .8em;
+    overflow: auto;
+    width: 100%;
+    height: 50%;
+}
+
+/*Events Slider*/
+.ui-widget-header {
+    border: none;
+    background: none;
+    background-color: #3c6dbf;
+    color: #fff;
+}
+
+    .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+        background: none;
+        border: none;
+        background-color: #3c6dbf;
+    }
+
+    .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+        border: 1px solid #3c6dbf;
+        color: #3c6dbf;
+        background: #cbdeff;
+    }
+
+    .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight a {
+        color: #fff;
+    }
+
+#datepicker {
+    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.eventTable{
+    width:100%;
+}
+
+#eventSlideout .eventTable td, #eventSlideout .eventTable th {
+    text-align: left;
+}
+
+.eventsButton {
+    border: none;
+    background-color: #3c6dbf;
+    color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+#datepicker {
+    margin-left: 1%;
+    font-size: 1.2em;
+}
+
+.currentEventButtonContainer {
+    width: 100%;
+}
+
+    .currentEventButtonContainer h3 {
+        border: none;
+        background-color: #3c6dbf;
+        color: #fff;
+        padding: 10px 10px 10px 10px;
+        margin: 15px;
+    }
+
+.eventHeader, #EventTableDiv {
+    background-color: #333;
+    font-size: .9em;
+}
+
+.eventTable tr:nth-child(even) {
+    background: #444;
+}
+
+.eventTableData {
+    float: left;
+    clear: both;
+}
+
+.eventTableTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
+    padding: 30px 15px 0px 15px;
+}
+
+.eventTableTime {
+    font-weight: regular;
+    font-size: 1.2em;
+    padding: 0px 15px 0px 15px;
+}
+
+.eventTableDescription {
+    font-size: .9em;
+    padding: 0px 15px 20px 15px;
+}
+
+/**Legend Slider**/
+
+ul.legendList {
+    list-style-type: none;
+    margin: 0px;
+    padding: 2.1em 0px 0 125px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-width: 210px;
+    font-size: .7em;
+}
+
+    ul.legendList li {
+        margin-bottom: .7em;
+        padding: 10px;
+        margin-right: 15px;
+        color: #fff;
+        border-radius: 5px;
+        width: 48%;
+        float: left;
+    }
+
+
+
+        ul.legendList li img {
+            display: inline;
+            vertical-align: bottom;
+            margin-right: 15px;
+        }
+
+        ul.legendList li span.legendText {
+            vertical-align: middle;
+            line-height: 2em;
+            padding: 0 0 0 1em;
+            font-size: 1.5em;
+        }
+
+        ul.legendList li span.legendIcon {
+            background-color: #fff;
+            background: transparent url(../images/ljSprite-legend-50percent.png) no-repeat 0 0;
+            display: block;
+            width: 25px;
+            height: 25px;
+            padding: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 2em;
+            margin-left: 20px;
+        }
+
+            ul.legendList li span.legendIcon.atm {
+                background-position: -50px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.busstop {
+                background-position: 2px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.elevators {
+                background-position: -96px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.parking {
+                background-position: -148px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.restroom {
+                background-position: -198px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.vending {
+                background-position: -248px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.food {
+                background-position: -298px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.gift {
+                background-position: -348px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.rx {
+                background-position: -397px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.help {
+                background-position: -448px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.legend10 {
+                background-position: -500px 3px;
+                background-color: #fff;
+                padding: 15px;
+            }
+
+            ul.legendList li span.legendIcon.legend11 {
+                background-position: -550px 3px;
+                background-color: #fff;
+                padding: 15px;
+                border-radius: 15px;
+            }
+
+
+
+#directionsSlideout {
+    width: 33%;
+    height: 4%;
+    background-color: #4bc45b;
+    padding: 70px 0 32px 12px;
+    margin-top: 24.4%;
+    box-shadow: 3px 0px 15px #888888;
+    position: absolute;
+    top: 30.95%;
+    left: 0%;
+}
+
+.directionsSlideoutSpanish {
+    padding: 57px 0 57px 12px !important;
+    margin-top: 23.3% !important;
+}
+
+
+.directionsicon {
+    background: url('../images/iconSprite_large.png') -150px 0;
+    float: none;
+    margin-top: -7px;
+    ;
+    -webkit-animation: directionIconAnimate 1s;
+    -moz-animation: directionIconAnimate 1s;
+    animation: directionIconAnimate 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+
+.directionButtonTxt {
+    color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -42px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@-webkit-keyframes directionIconAnimate {
+    0% {
+        top: 0px;
+    }
+
+    35% {
+        top: 10px;
+    }
+
+    65% {
+        top: 15px;
+    }
+
+    85% {
+        top: 10px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes directionIconAnimate {
+    0% {
+        top: 0px;
+    }
+
+    35% {
+        top: 10px;
+    }
+
+    65% {
+        top: 15px;
+    }
+
+    85% {
+        top: 10px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+@moz-keyframes directionIconAnimate {
+    0%;
+
+{
+    top: 0px;
+}
+
+35% {
+    top: 10px;
+}
+
+65% {
+    top: 15px;
+}
+
+85% {
+    top: 10px;
+}
+
+100% {
+    top: 0px;
+}
+
+}
+
+#directionsSlideout .slideoutInner {
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    box-shadow: 3px 0px 15px (0,0,0,.50);
+}
+
+#directionsSlideout.slideout.out.extra .slideoutInner {
+    left: 0px;
+}
+
+#directionsSlideout .nextPrevButtons, .menuButtonDirection {
+    background-color: #4bc45b;
+}
+
+#directionsSlideout #slideOutHeader {
+    padding: 0;
+    height: 10%;
+}
+
+.headerText {
+    color: #fff;
+    float: left;
+    padding-top: 10px;
+}
+
+    .headerText h4 {
+        font-size: 1.7em;
+    }
+
+#directionsSlideout .menuButtonDirection {
+    float: left;
+    width: 12%;
+    margin: 0;
+    height: 100%;
+}
+
+#directionsSlideout .slideOutContent {
+    color: #fff;
+    width: 86%;
+    height: 84%;
+    overflow: hidden;
+    padding: 0;
+    margin: 40px 5% 40px 5%;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+    #directionsSlideout .slideOutContent h3 {
+        font-size: 1.5em;
+    }
+
+    #directionsSlideout .slideOutContent fieldset {
+        overflow: auto;
+        height: 95%;
+        width: 100%;
+        padding-bottom: 0px;
+        float: left;
+        touch-action: pan-y;
+    }
+
+.floatLeft {
+    float: Left;
+}
+
+.directionsDiv {
+    direction: ltr;
+    width: 60%;
+    float: left;
+}
+
+
+#directionsSlideout ul {
+    padding: 0 10px 0 70px;
+}
+
+#directionsSlideout .directionsDiv h3 {
+    color: #4bc45b;
+    margin-top: 20px;
+}
+
+#directionsSlideout li {
+    list-style: none;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+#directionsSlideout .mappingParentDiv {
+    height: 258px;
+    margin-bottom: 30px;
+    margin-left: 600px;
+    width: 257px;
+    border: 4px solid #4bc45b;
+}
+
+.textToRemoveWhenSmall {
+    display: inline;
+}
+
+.textToShowWhenSmall {
+    display: none;
+}
+
+.directionTabHide {
+    margin-left: -33%;
+}
+
+.mappingDiv {
+}
+
+/*****TESTING CSS  - DESIGN NEEDS FINISHED******/
+#directionsSlideout .mappingParentDiv {
+    height: 258px;
+    margin-left: auto;
+    margin-right: 20px;
+    width: 258px;
+    border: 4px solid #4bc45b;
+}
+
+.mappingDiv::after {
+    background-image: url('../images/magnifyingGlass.png');
+    background-repeat: no-repeat;
+    background-position: -94px 18px;
+    content: '';
+    position: relative;
+    top: -122px;
+    right: -80px;
+    margin: 0 auto;
+    display:block;
+    width: 0px;
+    height: 115px;
+    border-left: solid 90px transparent;
+    border-bottom: solid 90px transparent;
+}
+/*********/
+
+.directionsHeaderButtons {
+    background-color: #4bc45b;
+    margin-top: 10px;
+    border: 0;
+}
+
+.displayTableRows {
+    clear: both;
+}
+
+.mapThumbnail {
+    top: -153px;
+}
+
+/****STEPS PANEL***/
+.stepsDiv {
+    float: right;
+    margin-right: 30px;
+    margin-top: 15px;
+    width: 100%;
+    display: none;
+}
+
+.stepsBtn {
+    border: none;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    background: #3c6dbf;
+    color: #fff;
+}
+
+.CurrentMap {
+    background: #4bc45b;
+    width: 60px;
+    height: 60px;
+}
+
+.stepTitle {
+    float: left;
+    font-size: 1.8em;
+    margin: 15px 30px;
+}
+
+
+/**Floor view modules**/
+#floorListModal ul {
+    padding-left: 0;
+}
+
+    #floorListModal ul li {
+        color: #fff;
+        background-color: #3c6dbf;
+        padding: 10px 10px 10px 20px;
+        border: none;
+        margin-top: 2px;
+        list-style-type: none;
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: left;
+    }
+
+/**TimeOut Module**/
+.modal {
+    top: 50%;
+}
+
+#TimeoutModal .modal-header {
+    padding-bottom: 40px;
+}
+
+#TimeoutModal .modal-body {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    font-weight: bold;
+}
+
+#TimeoutModal .modal-footer button {
+    color: #fff;
+    padding: 10px 20px 10px 20px;
+    background-image: none;
+    border: none;
+    border-radius: 0px;
+    margin-top: 2px;
+    text-align: center;
+}
+
+.countDown {
+    font-size: 50px;
+    color: #5f8edb;
+}
+
+.mainmenu {
+    background-color: #888;
+}
+
+.yesbtn {
+    background-color: #3c6dbf;
+}
+
+#loadingModal {
+    margin-top: 20%;
+}
+
+.loaderImg {
+    width: 66px;
+    height: 66px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#floorListModal p {
+    margin: 0;
+}
+
+#floorListModal .buttonArrow {
+    margin-top: -22px;
+}
+
+.modal-body {
+    text-align: center;
+}
+
+/**EMAIL MODULE***/
+#emailInput {
+    margin-bottom: 40px;
+    width: 400px;
+    text-align: center;
+}
+
+.moduleText {
+    font-size: 20px;
+    color: #3c6dbf;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submitButton {
+    padding: 15px 10px 15px 10px;
+    background-color: #3c6dbf;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+    float: none;
+    text-align: center;
+}
+
+    .submitButton:active {
+        background-color: #ccc;
+    }
+
+#EmailModal .modal-header {
+    padding-bottom: 35px;
+}
+
+
+/**Loading Module**/
+
+#loadingModal .modal-dialog {
+    padding: 30px;
+}
+
+    #loadingModal .modal-dialog h3 {
+        font-size: 25px;
+        font-weight: bold;
+        color: #3c6dbf;
+    }
+
+#loadingModal .modal-body {
+    padding: 50px;
+}
+
+/**you are here**/
+.youareherePopUp {
+}
+
+#jKeyboard {
+    z-index: 1100;
+}
+
+
+.locationMarker {
+    height: 15px;
+    width: 15px;
+    fill: #4bc45b;
+}
+
+    .locationMarker.red {
+        fill: #EE5B5B;
+    }
+
+.locationMarkerPulse {
+    fill: #fff;
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.0;
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+        -webkit-transform: translate(0px,0px);
+        scale(0.1, 0.1, 0.1);
+        opacity: 0.0;
+    }
+
+    50% {
+        opacity: 1.0;
+        scale(1.2, 1.2, 1.2);
+    }
+
+    100% {
+        -webkit-transform: translate(0px,0px);
+        scale(0.1, 0.1, 0.1);
+        opacity: 0.0;
+    }
+}
+
+.popover {
+    display: none;
+}
+
+
+/****QRCODE****/
+
+#QRcode {
+    position: absolute;
+    right: 0;
+    top: 44%;
+    padding: 10px 40px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #333;
+}
+
+
+
+    #QRcode h4, #QRcode h2 {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: #3c6dbf;
+    }
+
+    #QRcode h2 {
+        font-size: 2.4em;
+        text-align: center;
+        margin-top: -20px;
+    }
+
+
+
+.hideBeforePrint {
+    position: fixed;
+    left: -9999px;
+    z-index: -4000;
+}
+
+
+
+/***Avatar Video***/
+
+.avatarVideoLarge {
+    position: absolute;
+    width: 750px;
+    height: 750px;
+    top: 6%;
+    left: 16%;
+    overflow: hidden;
+    z-index:1001;
+}
+
+#avatarGreetingVideo {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 750px;
+    height: 750px;
+    border-radius: 800px;
+    border: 4px solid #3c6dbf;
+    position: absolute;
+    box-shadow: 0px 0px 15px #888888;
+    overflow: hidden;
+}
+
+
+/********PRINT CSS*******/
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .printThis * {
+        visibility: visible;
+        background: #fff;
+    }
+
+    .printThis .noPrint {
+        visibility: hidden;
+    }
+
+    .dontDisplay {
+        display: none;
+        width: 0;
+    }
+
+    .printThis {
+        visibility: visible;
+        background: #fff;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: auto;
+        color: #333;
+        z-index: 3;
+        list-style-type: none;
+        overflow: visible !important;
+        width: 0%;
+    }
+
+
+        .printThis li {
+            list-style-type: none;
+        }
+
+
+    .mappingParentDiv {
+        page-break-before: avoid !important;
+    }
+
+    .directionsDiv {
+        page-break-after: avoid !important;
+    }
+
+    .printOverlay {
+        padding-top: 10px;
+        margin-top: 20px;
+        page-break-inside: avoid !important;
+    }
+
+    .printFooter {
+        border-top: solid #333;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .mappingDiv::after {
+        display: none;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .printThis * {
+        visibility: visible;
+        background: #fff;
+    }
+
+    .printThis .noPrint {
+        visibility: hidden;
+    }
+
+    .dontDisplay {
+        display: none;
+        width: 0;
+    }
+
+    .printThis {
+        visibility: visible;
+        background: #fff;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 100%;
+        height: auto;
+        color: #333;
+        z-index: 3;
+        list-style-type: none;
+        overflow: visible !important;
+    }
+
+
+        .printThis li {
+            list-style-type: none;
+        }
+
+
+    .mappingParentDiv {
+        page-break-before: avoid !important;
+    }
+
+    .directionsDiv {
+        page-break-after: avoid !important;
+    }
+
+    .printOverlay {
+        padding-top: 10px;
+        page-break-inside: avoid !important;
+    }
+
+    .printFooter {
+        border-top: solid #333;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .printedTextH1 {
+        font-size: 1.2em;
+        color: #666;
+        font-weight: bold;
+    }
+
+    .printSubTitle {
+        font-size: 1.1em;
+        color: #333;
+    }
+
+    .ui-block-a {
+        float: left;
+        width: 60%;
+    }
+
+    .ui-block-b {
+        float: right;
+        width: 40%;
+        padding-top: 10px;
+    }
+
+    .clearFloatPrint {
+        clear: both;
+    }
+
+        .clearFloatPrint hr {
+            border: 0;
+            clear: both;
+            display: block;
+            background-color: #333;
+            height: 1px;
+            margin-top: 3px;
+            border-right: medium none;
+            border-top: #cccccc 1px solid;
+            border-left: medium none;
+            border-bottom: medium none;
+            height: 1px;
+        }
+
+    .printSubTitle {
+        margin-top: -20px;
+    }
+
+    h4 {
+        font-weight: bold;
+    }
+
+    .mappingParentDiv {
+        height: 258px;
+        margin-left: auto;
+        margin-right: 20px;
+        width: 258px;
+        border: 4px solid #666;
+        margin-bottom: 20px;
+    }
+
+        .mappingParentDiv:after {
+            content: "";
+            position: absolute;
+            border: 0;
+            clear: both;
+            display: block;
+            background-color: #333;
+            height: 1px;
+            left: 0;
+            width: 100%;
+            margin-top: 10px;
+            border-right: medium none;
+            border-top: #cccccc 1px solid;
+            border-left: medium none;
+            border-bottom: medium none;
+            height: 1px;
+        }
+}

@@ -1,0 +1,16 @@
+﻿/* for Auto Complete list*/
+
+#suggestto li a, #suggestto li a , #suggestGoogle li, #suggestGoogle li a, #suggestfrom li, #suggestfrom li a, .ui-li-divider{
+    word-wrap:break-word !important;
+    white-space:normal !important; 
+}
+
+@media (max-width: 480px) and (min-width: 321px) {
+    .ui-input-search {
+        
+    }
+    #suggestGoogle, #suggestto, #suggestfrom {
+        max-width:245px !important;
+    }
+}
+

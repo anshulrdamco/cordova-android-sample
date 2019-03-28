@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='^3.9.2';i.angular='5.0.3';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <!-- <title>WayFinding Web App</title> -->
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="assets/js/inobounce.js"></script>
+
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <!-- <link rel="manifest" type="application/json" href="manifest.json"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css" />
+  <meta name="theme-color" content="#4e8ef7">
+
+
+  <style type="text/css">
+    .offlineModal {
+      position: fixed;
+      width: 300px;
+      height: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 30px;
+      font-size: 20px;
+      left: 40%;
+      background: #fff;
+      text-align: center;
+      top: 30%;
+      visibility: hidden;
+    }
+
+    .offlineModalBG {
+      position: fixed;
+      width: 100%;
+      left: 0px;
+      top: 0px;
+      height: 100%;
+      background: #F2F2F2;
+      visibility: hidden;
+    }
+
+    @media (max-width:768px) and (min-width:320px) {
+      .offlineModal {
+        position: fixed;
+        width: 100%;
+        height: 200px;
+        border: none;
+        border-radius: 10px;
+        padding: 0px;
+        font-size: 20px;
+        left: 0%;
+        background: none;
+        text-align: center;
+        top: 30%;
+      }
+      .noInternetModal {
+        background: #be1010;
+        bottom: 0px;
+        position: fixed;
+        height: 70px;
+        width: 100%;
+        padding: 10px 20px;
+        color: #FFF;
+        z-index: 999999;
+      }
+      .noInternetModal .no-internet-icon-modal {
+        position: absolute;
+        left: 0px;
+        width: 45px;
+        height: 100px;
+        top: 0px;
+        background: #e97373 url('../assets/icon/no_network_icon.png') no-repeat 10px 25px;
+        background-size: 25px;
+      }
+      .noInternetModal p.mainHeading {
+        font-size: 16px;
+        padding-bottom: 5px;
+        font-weight: 400 !important
+      }
+      .noInternetModal p {
+        padding: 3px;
+        margin: 0px;
+        font-size: 14px;
+        text-align: left;
+        padding-left: 50px;
+        font-weight: 400;
+      }
+      .noInternetModal .clearInput {
+        font-size: 40px !important;
+        font-weight: 600;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        margin-top: 0px;
+      }
+    }
+  </style>
+
+<!-- <script src="http://localhost:8100/target/target-script-min.js#apoorvaiphone"></script> -->
+
+
+  <!--[if !IE]><!-->
+  <script>
+    if (/*@cc_on!@*/false) {
+      document.documentElement.className += ' ie10';
+    }
+  </script>
+  <!--<![endif]-->
+
+  <!-- cordova.js required for cordova apps (remove if not needed) -->
+  <script src="cordova.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,600i,700,700i,800,800i&amp;subset=latin-ext,vietnamese"
+    rel="stylesheet">
+  <link href="build/main.css?v=2.1.0" rel="stylesheet">
+</head>
+
+<body>
+<ion-app></ion-app>
+
+<script>
+
+
+</script>
+  <!-- Ionic's root component and where the app will load -->
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+
+  <!-- JQuery cookie plugin  -->
+  <script type="text/javascript" src="assets/js/jquery.cookie.js"></script>
+
+  <script src='assets/js/leaflet-image.js'></script>
+
+  <!-- <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB_srKE0wfKrqIWtuzewVKnuJKnnC3mMSQ"></script> -->
+
+  <!-- <script>
+    debugger;
+ 
+    window.version = "1.0.4";
+  </script> -->
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js?v=2.1.0"></script>
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js?v=2.1.0"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js?v=2.1.0"></script>
+
+  <!-- <script>
+  var releaseVersion = "1.0.3";
+  
+  function loadMainCssScript()
+  
+  {
+    document.body.appendChild(document.createElement("link")).href = "build/main.css?v=" + releaseVersion;
+  }
+  
+  function loadPollyfillScript()
+  {
+    document.body.appendChild(document.createElement("script")).src = "build/polyfills.js?v=" + releaseVersion;
+  }
+  
+  function loadVendorScript()
+  {
+    document.body.appendChild(document.createElement("script")).src = "build/vendor.js?v=" + releaseVersion;
+  }
+  
+  function loadMainScript()
+  {
+    document.body.appendChild(document.createElement("script")).src = "build/main.js?v=" + releaseVersion;
+  }
+
+  loadMainCssScript();
+  loadPollyfillScript();
+  loadVendorScript();
+  loadMainScript();
+</script> -->
+
+  <script type="text/javascript">
+    let hostParam = (getParameterByName("host") || '').toLowerCase();
+    let env = getParameterByName("env");
+
+    let notimeout = getParameterByName("notimeout");
+
+    function getParameterByName(name, url) {
+      if (!url) {
+        url = window.location.href;
+      }
+            console.log(name)
+
+      name = name.replace(/[\[\]]/g, "\\$&");
+      console.log(name)
+      let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    function createCookie(name, value, days) {
+      console.log(name)
+      let expires;
+      if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+      }
+      else {
+        expires = "";
+      }
+      document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+
+    function readIOSNative(data) {
+      //console.log("send data:" + data);
+      return data;
+    }
+  </script>
+  <script>
+    var isPortrait='portrait';
+    if(window.orientation==0)
+    {
+      isPortrait='portrait';
+    }
+    if(window.orientation==90)
+    {
+      isPortrait='landscape';
+    }
+    $('html').addClass(isPortrait);
+    // Listen for orientation changes
+    window.addEventListener("orientationchange", function() {
+    if(window.orientation==0)
+    {
+      isPortrait='portrait';
+    }
+    if(window.orientation==90)
+    {
+      isPortrait='landscape';
+    }
+      $('html').removeClass('landscape');
+      $('html').removeClass('portrait');
+      $('html').addClass(isPortrait);
+    });
+
+
+    var isMobile = (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone/i.test(navigator.userAgent)) ? true : false;
+    //var Android = false;
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+    //console.log('is Android' + isAndroid);
+    window.LatLngBoundFromJS = function (data) {
+      //  console.log('from chrome browser LatLngBoundFromJS:' + JSON.stringify(data));
+      if (isMobile && isAndroid) {
+        // console.log('LatLngBound From APP:' + JSON.stringify(data));
+        // Android.LatLngBoundFromJS(JSON.stringify(data));
+      }
+    }
+  </script>
+
+  <script>
+    var _isDataLoaded = false;
+    var tempMockData = null;
+
+    //receive callback from applite with the beacon data
+    window.LoadAppliteData = function (mockData) {
+      console.log('LoadAppliteData Call Values' + JSON.stringify(mockData));
+
+      sessionStorage.removeItem("tempMockData");
+      sessionStorage.setItem("tempMockData", mockData);
+      //tempMockData = mockData;
+
+      var event = new CustomEvent("AppLiteCall", { detail: mockData });
+      window.dispatchEvent(event);
+    }
+
+    //receive callback from applite is copy destination event is successful on applite or not.
+    window.callbackCopyDestination = function (mockData) {
+      console.log('callbackCopyDestination Call Values' + JSON.stringify(mockData));
+
+      var event = new CustomEvent("copyToClipBoard", { detail: mockData });
+      window.dispatchEvent(event);
+    }
+
+    // window.IsFirstLaunch = function (mockData) {
+
+    //    console.log('IsFirstLaunch Call Values' + JSON.stringify(IsFirstLaunch));
+
+    //   sessionStorage.removeItem("IsFirstLaunch");
+    //   sessionStorage.setItem("IsFirstLaunch", mockData);
+    //   //tempMockData = mockData;
+
+    //   var event = new CustomEvent("IsFirstLaunch", { detail: mockData });
+    //   window.dispatchEvent(event);
+    // }
+
+    //here we set the value as true when our application loaded sucessfully
+    // this value fetch by applite when app starts.
+    window.setIsDataLoaded = function (loadedData) {
+      // console.log('setIsDataLoaded:' + loadedData);
+      _isDataLoaded = loadedData
+    }
+
+    //as we set agreeEula as true at web end same thing we are set ij applite too
+    // for setting cookie in applite we are sending request to applite for set/create
+    //cookie as eulaAccepted at their own end and set it true/false.
+    window.setEulaAccepted = function (loadedDevice) {
+      if (loadedDevice == 'L_iOS') {
+        window.webkit.messageHandlers.AppliteScriptMessageHandler.postMessage("EulaAccepted");
+      }
+      else if (loadedDevice == 'L_Android') {
+        window.JSBridge.EulaAccepted();
+      }
+    }
+
+    // we are sending request to applite for copy the link/data
+    // as we are sending into request at their clipboard
+    //so that user can paste it anywhere in the applite/mobile/notepad etc.
+    window.copyDestinationAddressInApp = function (loadedDevice, param) {
+      if (loadedDevice == 'L_iOS') {
+        window.webkit.messageHandlers.AppliteScriptMessageHandler.postMessage(param);
+      }
+      else if (loadedDevice == 'L_Android') {
+        window.JSBridge.copyDestinationAddress(param);
+      }
+    }
+
+
+
+    // as we are clicking into uber/google ,map/waze etc into web 
+    //then through this method we are intimating the applite for clicking option in the web
+    //so that accord to click applite starts working and laod particular option.
+    window.openMapInDirectionInApp = function (loadedDevice, param) {
+      if (loadedDevice == 'L_iOS') {
+        window.webkit.messageHandlers.AppliteScriptMessageHandler.postMessage(param);
+      }
+      else if (loadedDevice == 'L_Android') {
+        window.JSBridge.openMapInDirection(param);
+      }
+    }
+
+
+    // Privacy Policy CAllback
+    window.openPrivacyPolicy = function (deviceType) {
+      console.log("device type in open privacy policy method" + deviceType);
+      if (deviceType == 'L_iOS') {
+        window.webkit.messageHandlers.AppliteScriptMessageHandler.postMessage("ShowPrivacyStatement");
+      }
+      else if (deviceType == 'L_Android') {
+        window.JSBridge.ShowPrivacyStatement();
+      }
+    }
+
+    //getter of the applite  while our data loading is complete.
+    window.IsDataLoaded = function () {
+      // console.log('_isdataloaded:' + _isDataLoaded);
+      return _isDataLoaded;
+    }
+
+
+    // Privacy Policy CAllback
+    window.openPrivacyPolicy = function (deviceType) {
+      console.log("device type in open privacy policy method" + deviceType);
+      if (deviceType == 'L_iOS') {
+        window.webkit.messageHandlers.AppliteScriptMessageHandler.postMessage("ShowPrivacyStatement");
+      }
+      else if (deviceType == 'L_Android') {
+        window.JSBridge.ShowPrivacyStatement();
+      }
+    }
+
+    window.getDirectionIndex = function(param){
+      console.log(param)
+     HybridBridge.addItem('item',function(){console.log("Hybrid Bridge Success")},function(e){console.log("Hybrid Bridge Error" + e)});
+    
+    }
+
+
+    var isOnline = false;
+
+    window.setInterval(function () {
+      var tempMockDataVar = sessionStorage.getItem("tempMockData");
+      //console.log('tempMockData:' + tempMockDataVar);
+      if (window.navigator.onLine) {
+        document.getElementById("internetConnectionContainer").style.visibility = "hidden";
+        document.getElementById("internetConnection").style.visibility = "hidden";
+        if (isOnline) {
+          isOnline = false;
+          if (tempMockDataVar == null) {
+            sessionStorage.clear();
+            window.location.reload();
+          }
+        }
+      }
+      else {
+        isOnline = true;
+
+        if (tempMockDataVar != null) {
+          if (!(JSON.parse(tempMockDataVar).IsAppLite)) {
+            document.getElementById("internetConnectionContainer").style.visibility = "visible";
+            document.getElementById("internetConnection").style.visibility = "visible";
+
+          }
+        }
+        else {
+          document.getElementById("internetConnectionContainer").style.visibility = "visible";
+          document.getElementById("internetConnection").style.visibility = "visible";
+        }
+      }
+    }, 1000);
+
+
+    // handling the back button functionality
+    window.onpopstate = function (event) {
+      var event = new CustomEvent("backButtonCall", { detail: "back" });
+      window.dispatchEvent(event);
+    };
+
+    //handling the ios clipboard copy functionality.
+    window.iosCopyToClipboard = function (el) {
+      var oldContentEditable = el.contentEditable,
+        oldReadOnly = el.readOnly,
+        range = document.createRange();
+
+      the.contenteditable = true;
+      el.readonly = false;
+      range.selectNodeContents(el);
+
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(range);
+
+      el.setSelectionRange(0, 999999); // A big number, to cover anything that could be inside the element.
+
+      el.contentEditable = oldContentEditable;
+      el.readOnly = oldReadOnly;
+
+      document.execCommand('copy');
+    }
+  </script>
+
+
+  <div id="internetConnectionContainer" class="offlineModalBG">
+
+    <div id="internetConnection" class="offlineModal">
+
+      <div class="noInternetModal">
+        <div class="no-internet-icon-modal"></div>
+        <p class="mainHeading">You seem to be offline</p>
+        <p>Check your network settings.</p>
+        <ion-icon class="clearInput" name="close"></ion-icon>
+      </div>
+      <!-- <strong>No Internet!</strong>
+      <br/> Please check your network connection.
+    </div> -->
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

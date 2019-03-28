@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<!--Wayfinder Version 2.3.0, Copyright LogicJunction.com 2013 -->
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html class="ie"> <![endif]-->
+<!--[if !IE]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE" />
+    <META HTTP-EQUIV="Expires" CONTENT="-1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!--[if lt IE 10]>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <![endif]-->
+    <!-- <title>Wayfinding Web App</title> -->
+    <title>Wayfinding Web App</title>
+    <script src="assets/print/js/errorLogger.js?20130823142622"></script>
+    <script src="assets/print/js/minVersionNotice.js?20131203085005"></script>
+    <script type="text/javascript">
+        //startsWith not supported In IE, use this
+        String.prototype.startsWith = function (str) {
+            if (this.indexOf(str) === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+    </script>
+
+    <script>
+        function changeImage() {
+            if (window.location.href.toLowerCase().indexOf("clevelandclinic") >= 0 && document.getElementById('loadingImage')) {
+                document.getElementById('loadingImage').style.backgroundImage = 'url(images/cc_bug_ani.gif)';
+            }
+        }
+        function closeLoadingCover() {
+            var coverElement = document.getElementById("loadingCover");
+            if (coverElement) coverElement.className += " hide";
+        }
+        // Close loading cover after 15 seconds
+        //if(window.location.href.toLowerCase().indexOf("downformaintenance")>=0)
+        setTimeout(closeLoadingCover, 5000);
+        setTimeout(changeImage, 1000);
+
+        //before everything that would spoof support
+        var _supportsCORS = ('withCredentials' in new XMLHttpRequest() || typeof XDomainRequest !== "undefined");
+        function supportsCORS() {
+            if (typeof _supportsCORS == 'undefined') {
+                _supportsCORS = ('withCredentials' in new XMLHttpRequest() || typeof XDomainRequest !== "undefined");
+            }
+            return _supportsCORS;
+        }
+
+        function getJsonpSuffix() { //does it need Jsonp?
+            return "&callback=?";
+        }
+        function getJsonDataType() { //does it need Jsonp?
+            return "jsonp";
+        }
+        function getJsonContentType() { //does it need Jsonp?
+            return "text/javascript";
+        }
+    </script>
+    <!-- <script>
+        var tt;
+        function test(){
+            console.log(jQuery(document).find("printIframeIE").contents());
+            console.log(window.frames['printIframeIE'])
+            // console.log(window.name);
+            tt = jQuery(document).find("#printIframeIE");
+        }
+        debugger;
+        setTimeout(function(){
+            test();
+        }, 1000);
+        document.title = "amc";
+    </script> -->
+
+    <!--[if lt IE 10]>
+          <script type="text/javascript" src="assets/print/js/vendors/aight/aight.js?20140313045824"></script>
+      <![endif]-->
+
+    <meta name="viewport" content="width=device-width">
+
+    <script src="assets/print/js/vendors/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="assets/print/js/vendors/jquery-ui-1.10.4.custom.min.js?20140310152310"></script>
+    <script src="assets/print/js/vendors/jquery.mobile/jquery.mobile-1.4.5.min.js?20140310152245"></script>
+    <script src="assets/print/js/vendors/jquery.ui.datepicker.js?20140313045859"></script>
+    <script src="assets/print/js/vendors/jquery.mobile.datepicker.js?20140403120816"></script>
+
+    <!--<script src="assets/print/js/vendors/knockout-2.2.1.js"></script>-->
+    <script src="assets/print/js/vendors/knockout-2.2.1.debug.js"></script>
+    <script src="assets/print/js/vendors/json2.js"></script>
+    <script src="assets/print/js/vendors/xdr.js"></script>
+    <script src="assets/print/js/vendors/jquery-delayInvoke.js"></script>
+    <script src="assets/print/js/vendors/knockout-postbox.js"></script>
+    <script src="assets/print/js/vendors/d3/d3.v3.min.js"></script>
+
+    <!--[if lt IE 10]>
+        <script src="assets/print/js/vendors/raphael.js" type="text/javascript"></script>
+        <script type="text/javascript" src="assets/print/js/vendors/aight/aight.d3.js?20130823142632"></script>
+    <![endif]-->
+    <script src="assets/print/js/lj.svg.js?20140214090712"></script>
+    <script src="assets/print/js/bindings.knockout.js?20140214090651"></script>
+    <script src="assets/print/js/tagsearch.knockout.js"></script>
+    <script src="assets/print/js/autocomplete.knockout.js?20140424072201"></script>
+    <script src="assets/print/js/destination.knockout.js?20140403080053"></script>
+    <script src="assets/print/js/printable.knockout.js?20140310152222"></script>
+    <script src="assets/print/js/ljDirections.knockout.js?20140214090717"></script>
+    <script src="assets/print/js/campus.knockout.js?20140214090653"></script>
+    <script src="assets/print/js/client.knockout.js?20140403080048"></script>
+    <script src="assets/print/js/events.knockout.js?20140430065530"></script>
+    <script src="assets/print/js/date.js?20140430065529"></script>
+    <script src="assets/print/js/lookupItem.knockout.js?20130823142628"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_srKE0wfKrqIWtuzewVKnuJKnnC3mMSQ&libraries=places">
+
+    </script>
+    <script src="assets/print/js/lj.googlemaps.js?20140310152217"></script>
+    <script src="assets/print/js/lj.main.js?20140430065532"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-40011584-1', 'yourdirectroute.com');
+        ga('send', 'pageview');
+
+    </script>
+
+        <!-- <script>
+
+            $('#printIframeIE').on('load', function(){
+            //your code (will be called once iframe is done loading)
+            debugger;
+            $(this);
+                   // alert($(this).attr('src'));
+              });
+
+              setTimeout(function() {
+                //   debugger;
+                alert(document.frames['printIframeIE'].location.href)
+                alert($('#printIframeIE').contents().get(0).location.href);
+                  alert('in side iframe');
+                // alert($('#printIframeIE').attr('src'));
+              }, 13500);
+
+
+
+            // $(window).bind("load", function() {
+            //     alert($('#printIframeIE').attr('src'));
+            // })
+            // debugger;
+        document.title = "amc";
+    </script> -->
+
+    <link rel="stylesheet" href="assets/print/css/ui-common.css" />
+    <link rel="stylesheet" href="assets/print/css/jquery.mobile.datepicker.css?20140310152202" />
+    <link rel="stylesheet" href="assets/print/css/jquery.mobile.icons.min.css?20140310152203" />
+    <link rel="stylesheet" href="assets/print/js/vendors/jquery.mobile/jquery.mobile.structure-1.4.0.min.css?20140310152303" />
+    <link rel="stylesheet" href="assets/print/css/app.css?20140430065518" />
+    <link rel="stylesheet" href="assets/print/css/webappvtheme.css?20140430065518" />    
+</head>
+
+<body id="mainBody" onunload="prepareForRefresh();" data-bind="css: {'isTestMode': TestMode, 'featureAds': clientVM.FirstAdImage() || clientVM.SecondAdImage() || clientVM.ThirdAdImage(), 'featureAdsMobile': clientVM.FirstAdMobile() }  ">
+
+
+    <div data-role="page" data-theme="a" id="driving" class="ljMapPage">
+        <div id="loadingCover1" class="loadingCover">
+            <h3 id="loadingImage">Loading</h3>
+        </div>
+
+        <div data-role="header" class="appHeader">
+            <a href="#" data-bind="click: resetPage" data-role="none" class="logo">
+                <img data-bind="attr: { src: clientVM.imagePath }" alt="Home">
+            </a>
+            <a href="#" data-bind="click: resetPage" class="startOverButton ui-mini ui-btn ui-corner-all ui-icon-lj-home ui-btn-icon-left">Start
+                over</a>
+        </div>
+        <!-- /header -->
+
+        <div class="ui-content" role="main">
+
+            <div class="ljContainer">
+                <dl class="startend">
+                    <dt>From: </dt>
+                    <dd>
+                        <span data-bind="text: start_location().DisplayName">123 Address Rd. Cleveland, OH 44333 </span>
+                    </dd>
+                    <dt class="to">To: </dt>
+                    <dd class="to">
+                        <span data-bind="text: end_location().DisplayName">123 Address Rd. Cleveland, OH 44333 </span>
+                    </dd>
+                </dl>
+                <div class="headerButtons">
+                    <a href="#printpopup1" data-rel="popup" class="printButton ui-mini ui-btn ui-corner-all ui-btn-inline ui-icon-lj-print ui-btn-icon-notext"
+                        data-position-to="window">Print</a>
+                    <a href="#actionMenu1" id="actionButton1" class="actionButton ui-mini ui-btn ui-corner-all ui-btn-a ui-btn-inline ui-icon-bars"
+                        data-rel="popup" data-position-to="#actionButton1">More</a>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == false">
+                    <ul>
+                        <li class="googleMap"><a href="#driving" class="ui-icon-lj-drivingMap pageButton ui-btn-active ui-state-persist ui-btn-icon-left"
+                                data-bind="mobileBtnText:clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:clientVM.MapsTabLongText">Hospital Maps</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: start_location().isOffCampus && !start_location().isOffCampus() && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == false">
+                    <ul>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:clientVM.MapsTabLongText">Hospital Maps</a></li>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap ui-btn-active ui-state-persist"
+                                data-bind="mobileBtnText:clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == false">
+                    <ul>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap ui-btn-active ui-state-persist"
+                                data-bind="mobileBtnText:clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+                <div class="mapHeader">
+                    <h1 data-bind="text: clientVM.locationName"></h1>
+                </div>
+                <span class="ljSeparatorSmall map"></span>
+                <div class="ljMapContainer">
+                    <div id="map_canvas"></div>
+                </div>
+                <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdImage() || clientVM.SecondAdImage() || clientVM.ThirdAdImage()">
+                    <div class="ui-grid-b ui-responsive">
+                        <div class="ui-block-a" data-bind="visible: clientVM.FirstAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-b" data-bind="visible: clientVM.SecondAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: clientVM.SecondAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.SecondAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-c" data-bind="visible: clientVM.ThirdAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: clientVM.ThirdAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.ThirdAdImage() }" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div data-role="popup" id="actionMenu1" data-history="false" data-theme="a" data-bind="with: mainVM">
+                <ul data-role="listview" data-inset="true" data-theme="a">
+                    <li data-role="divider" data-theme="b">Choose an action:</li>
+                    <li data-icon="lj-home"><a href="#" data-bind="click: resetPage">Start Over</a></li>
+                    <li data-icon="lj-email"><a data-bind="click: sendEmailClick.bind($data, '1')" data-rel="popup">Email
+                            Directions</a></li>
+                    <li data-icon="lj-print"><a data-bind="click: printActionClick.bind($data, '1')" data-rel="popup">Print</a></li>
+                    <li data-icon="lj-summary"><a href="#printable" class="pageButton summaryButton" data-rel="popup">View
+                            Summary</a></li>
+                    <li><a data-bind="click: pushReverseDirections">Reverse Directions</a></li>
+                    <li><a data-bind="click: pushNextDestination">Go to Next Destination</a></li>
+                    <li data-icon="lj-nav" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus() || (end_location().isOffCampus && end_location().isOffCampus()))"><a
+                            data-bind="    attr: { href: googleDirectionsVM.url }" target="blank" rel="external">Use
+                            Navigation App</a></li>
+                </ul>
+            </div>
+
+            <div data-role="popup" id="printpopup1" data-overlay-theme="a" data-history="false" class="printpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: printableVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <div data-bind="visible: (start_location().isOffCampus && !start_location().isOffCampus() && end_location().isOffCampus && end_location().isOffCampus()) || ((start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="driveMap" id="driveMap1" class="driveMap" data-bind="checked: drivingMapVisible">
+                        <label for="driveMap1">Google Map</label>
+                        <input type="checkbox" name="driveDir" id="driveDir1" class="driveDir" data-bind="checked: drivingDirectionsVisible">
+                        <label for="driveDir1">Driving Directions</label>
+                        <input type="checkbox" name="walkMap" id="walkMap1" class="walkMap" data-bind="checked: walkingMapVisible">
+                        <label for="walkMap1">Hospital Maps</label>
+                        <input type="checkbox" name="walkDir" id="walkDir1" class="walkDir" data-bind="checked: walkingDirectionsVisible">
+                        <label for="walkDir1">Walking Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <div data-bind="visible: end_location().isOffCampus && end_location().isOffCampus() && (start_location().isOffCampus && start_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="driveMap" id="driveMap1a" class="driveMap" data-bind="checked: drivingMapVisible">
+                        <label for="driveMap1a">Google Map</label>
+                        <input type="checkbox" name="driveDir" id="driveDir1a" class="driveDir" data-bind="checked: drivingDirectionsVisible">
+                        <label for="driveDir1a">Driving Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <a href="#printable" class="pageButton getDirectionsButton printButton ui-btn ui-corner-all" data-bind="css: { 'lj-disabled': !isPrintEnabled() },attr:{target:mainVM.clientVM.EnableOpenPrintPreviewInNewTab()?'_blank':'_self'}">View
+                    Printable Page</a>
+            </div>
+
+            <div data-role="popup" id="emailpopup1" data-overlay-theme="a" data-history="false" class="emailpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: mainVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <fieldset class="popupFields">
+                    <legend data-bind="html: emailLegendHtml">Who do you want to email?</legend>
+                    <input type="text" data-bind="value: emailToSendTo, valueUpdate: 'keyup'" placeholder="Enter an email address ..." />
+                    <span class="popupWarningSpan">Email address syntax incorrect.</span>
+                </fieldset>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '1', 0)">Edit
+                    Email</a>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '1', 1)">Send
+                    Email</a>
+                <div class="warningMessage" data-bind="text: EmailWarning"></div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap ui-btn-active ui-state-persist"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                </ul>
+            </div>
+
+            <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdMobile() && (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == true">
+                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdMobile() }" /></a>
+            </div>
+
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: start_location().isOffCampus && !start_location().isOffCampus() && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap ui-btn-active ui-state-persist"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap ui-btn-active ui-state-persist"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!--footer-->
+    </div>
+    <!-- /page -->
+
+    <div data-role="page" data-theme="a" id="drivingdirections" class="ljMapPage">
+        <div id="loadingCover2" class="loadingCover">
+            <h3 id="loadingImage">Loading</h3>
+        </div>
+
+        <div data-role="header" class="appHeader">
+            <a href="#" data-bind="click: resetPage" data-role="none" class="logo">
+                <img data-bind="attr: { src: clientVM.imagePath }" alt="Home">
+            </a>
+            <a href="#" data-bind="click: resetPage" class="startOverButton ui-mini ui-btn ui-corner-all ui-icon-lj-home ui-btn-icon-left">Start
+                over</a>
+        </div>
+        <!-- /header -->
+
+        <div class="ui-content" role="main">
+
+            <div class="ljContainer">
+
+                <dl class="startend">
+                    <dt>From: </dt>
+                    <dd>
+                        <span data-bind="text: start_location().DisplayName">123 Address Rd. Cleveland, OH 44333 </span>
+                    </dd>
+                    <dt class="to">To: </dt>
+                    <dd class="to" data-bind="text: end_location().DisplayName">
+                        Admissions
+                    </dd>
+                </dl>
+                <div class="headerButtons">
+                    <a href="#printpopup2" data-rel="popup" class="printButton ui-mini ui-btn ui-corner-all ui-btn-inline ui-icon-lj-print ui-btn-icon-notext"
+                        data-position-to="window">Print</a>
+                    <a href="#actionMenu2" id="actionButton2" class="actionButton ui-mini ui-btn ui-corner-all ui-btn-a ui-btn-inline ui-icon-bars"
+                        data-rel="popup" data-position-to="#actionButton2">More</a>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == false">
+                    <ul>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-btn-active ui-state-persist ui-icon-lj-drivingDirections">Driving
+                                Directions</a></li>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:clientVM.MapsTabLongText">Hospital Maps</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: start_location().isOffCampus && !start_location().isOffCampus() && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == false">
+                    <ul>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:clientVM.MapsTabLongText">Hospital Maps</a></li>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections ui-btn-active ui-state-persist">Driving
+                                Directions</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == false">
+                    <ul>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections ui-btn-active ui-state-persist">Driving
+                                Directions</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+                <div class="mapHeader">
+                    <h1 data-bind="text: clientVM.locationName"></h1>
+                </div>
+                <div class="ljDirectionsContainer">
+                    <div id="directionsPanel"></div>
+                </div>
+                <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdImage() || clientVM.SecondAdImage() || clientVM.ThirdAdImage()">
+                    <div class="ui-grid-b ui-responsive">
+                        <div class="ui-block-a" data-bind="visible: clientVM.FirstAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-b" data-bind="visible: clientVM.SecondAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: clientVM.SecondAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.SecondAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-c" data-bind="visible: clientVM.ThirdAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: clientVM.ThirdAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.ThirdAdImage() }" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="popup" id="actionMenu2" data-theme="a" data-history="false" data-bind="with: mainVM">
+                <ul data-role="listview" data-inset="true" data-theme="a">
+                    <li data-role="divider" data-theme="b">Choose an action:</li>
+                    <li data-icon="lj-home"><a href="#" data-bind="click: resetPage">Start Over</a></li>
+                    <li data-icon="lj-email"><a data-bind="click: sendEmailClick.bind($data, '2')" data-rel="popup">Email
+                            Directions</a></li>
+                    <li data-icon="lj-print"><a data-bind="click: printActionClick.bind($data, '2')" data-rel="popup">Print</a></li>
+                    <li data-icon="lj-summary"><a href="#printable" class="pageButton summaryButton" data-rel="popup">View
+                            Summary</a></li>
+                    <li><a data-bind="click: pushReverseDirections">Reverse Directions</a></li>
+                    <li><a data-bind="click: pushNextDestination">Go to Next Destination</a></li>
+                    <li data-icon="lj-nav" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus() || (end_location().isOffCampus && end_location().isOffCampus()))"><a
+                            data-bind="    attr: { href: googleDirectionsVM.url }" target="blank" rel="external">Use
+                            Navigation App</a></li>
+                </ul>
+            </div>
+
+            <div data-role="popup" id="printpopup2" data-overlay-theme="a" data-history="false" class="printpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: printableVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <div data-bind="visible: (start_location().isOffCampus && !start_location().isOffCampus() && end_location().isOffCampus && end_location().isOffCampus()) || ((start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="driveMap" id="driveMap2" class="driveMap" data-bind="checked: drivingMapVisible">
+                        <label for="driveMap2">Google Map</label>
+                        <input type="checkbox" name="driveDir" id="driveDir2" class="driveDir" data-bind="checked: drivingDirectionsVisible">
+                        <label for="driveDir2">Driving Directions</label>
+                        <input type="checkbox" name="walkMap" id="walkMap2" class="walkMap" data-bind="checked: walkingMapVisible">
+                        <label for="walkMap2">Hospital Maps</label>
+                        <input type="checkbox" name="walkDir" id="walkDir2" class="walkDir" data-bind="checked: walkingDirectionsVisible">
+                        <label for="walkDir2">Walking Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <div data-bind="visible: end_location().isOffCampus && end_location().isOffCampus() && (start_location().isOffCampus && start_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="driveMap" id="driveMap2a" class="driveMap" data-bind="checked: drivingMapVisible">
+                        <label for="driveMap2a">Google Map</label>
+                        <input type="checkbox" name="driveDir" id="driveDir2a" class="driveDir" data-bind="checked: drivingDirectionsVisible">
+                        <label for="driveDir2a">Driving Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <a href="#printable" class="pageButton getDirectionsButton printButton ui-btn ui-corner-all" data-bind="css: { 'lj-disabled': !isPrintEnabled() },attr:{target:mainVM.clientVM.EnableOpenPrintPreviewInNewTab()?'_blank':'_self'}">View
+                    Printable Page</a>
+            </div>
+            <div data-role="popup" id="emailpopup2" data-overlay-theme="a" data-history="false" class="emailpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: mainVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <fieldset class="popupFields">
+                    <legend data-bind="html: emailLegendHtml">Who do you want to email?</legend>
+                    <input type="text" data-bind="value: emailToSendTo, valueUpdate: 'keyup'" placeholder="Enter an email address ..." />
+                    <span class="popupWarningSpan">Email address syntax incorrect.</span>
+                </fieldset>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '2', 0)">Edit
+                    Email</a>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '2', 1)">Send
+                    Email</a>
+                <div class="warningMessage" data-bind="text: EmailWarning"></div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections ui-btn-active ui-state-persist">Driving
+                            Directions</a></li>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                </ul>
+            </div>
+
+            <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdMobile() && (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == true">
+                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdMobile() }" /></a>
+            </div>
+
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: start_location().isOffCampus && !start_location().isOffCampus() && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-drivingDirections ui-btn-active ui-state-persist">Driving
+                            Directions</a></li>
+                </ul>
+            </div>
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && end_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections ui-btn-active ui-state-persist">Driving
+                            Directions</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!--footer-->
+    </div>
+    <!-- /page -->
+
+    <div data-role="page" data-theme="a" id="walking" class="ljMapPage">
+        <div id="loadingCover3" class="loadingCover">
+            <h3 id="loadingImage">Loading</h3>
+        </div>
+
+        <div data-role="header" class="appHeader" id="walkingHeader">
+            <a href="#" data-bind="click: resetPage" data-role="none" class="logo">
+                <img data-bind="attr: { src: clientVM.imagePath }" alt="Home">
+            </a>
+            <a href="#" data-bind="click: resetPage" class="startOverButton ui-mini ui-btn ui-icon-lj-home ui-corner-all ui-btn-icon-left">Start
+                over</a>
+        </div>
+        <!-- /header -->
+
+        <div class="ui-content" role="main" id="directionsContent" data-bind="with: ljdirectionsVM">
+
+            <div class="ljContainer">
+                <dl class="startend">
+                    <dt>From: </dt>
+                    <dd>
+                        <span data-bind="text: $parent.start_location().DisplayName">123 Address Rd. Cleveland, OH
+                            44333 </span>
+                    </dd>
+                    <dt class="to">To: </dt>
+                    <dd class="to" data-bind="text: $parent.end_location().DisplayName">
+                        Admissions
+                    </dd>
+                </dl>
+                <div class="headerButtons">
+                    <a href="#printpopup3" data-rel="popup" class="printButton ui-mini ui-btn ui-icon-lj-print ui-btn-icon-notext ui-corner-all ui-btn-inline"
+                        data-position-to="window">Print</a>
+                    <a href="#actionMenu3" id="actionButton3" class="actionButton ui-mini ui-btn ui-btn-a ui-icon-bars ui-corner-all ui-btn-icon-left ui-btn-inline"
+                        data-rel="popup" data-position-to="#actionButton3">More</a>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: $parent.end_location().isOffCampus && !$parent.end_location().isOffCampus() && $parent.start_location().isOffCampus && $parent.start_location().isOffCampus() && $parent.isFooterNavBar() == false">
+                    <ul>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:$parent.clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:$parent.clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap ui-btn-active ui-state-persist"
+                                data-bind="mobileBtnText:$parent.clientVM.MapsTabLongText">Hospital Maps</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: $parent.end_location().isOffCampus && !$parent.end_location().isOffCampus() && $parent.start_location().isOffCampus && !$parent.start_location().isOffCampus() && $parent.isFooterNavBar() == false">
+                    <ul>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:$parent.clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap ui-btn-active ui-state-persist"
+                                data-bind="mobileBtnText:$parent.clientVM.MapsTabLongText">Hospital Maps</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: $parent.end_location().isOffCampus && $parent.end_location().isOffCampus() && $parent.start_location().isOffCampus && !$parent.start_location().isOffCampus() && $parent.isFooterNavBar() == false">
+                    <ul>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:$parent.clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap ui-btn-active ui-state-persist"
+                                data-bind="mobileBtnText:$parent.clientVM.MapsTabLongText">Hospital Maps</a></li>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:$parent.clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+                <div class="mapHeader">
+                    <h1 data-bind="text: currentStepName" class="currentStepName"></h1>
+                    <div class="mapNav">
+                        <a href="#" id="previousButton" data-bind="click: goPrevious, css:{'ui-btn-icon-notext': $parent.IsMobileWidth(), 'ui-btn-icon-left': !$parent.IsMobileWidth()}"
+                            class="ui-btn ui-corner-all ui-mini ui-btn-inline ui-icon-arrow-l">Previous</a>
+                        <span data-bind="text: currentStepText" class="currentStep"></span>
+                        <a href="#" id="nextButton" data-bind="click: goNext, css:{'ui-btn-icon-notext': $parent.IsMobileWidth(), 'ui-btn-icon-right': !$parent.IsMobileWidth()}"
+                            class="ui-btn ui-corner-all ui-mini ui-btn-inline ui-icon-arrow-r">Next</a>
+                        <a href="#legendPanel" id="legendButton" data-bind="css:{'ui-btn-icon-notext': $parent.IsMobileWidth(), 'ui-btn-icon-right': !$parent.IsMobileWidth()}"
+                            class="ui-btn ui-corner-all ui-mini ui-btn-inline ui-icon-lj-key">Legend</a>
+                    </div>
+                </div>
+                <div class="ljMapContainer" id="SVGBox">
+                </div>
+                <div class="ljAdsFooter" data-bind="visible: $parent.clientVM.FirstAdImage() || $parent.clientVM.SecondAdImage() || $parent.clientVM.ThirdAdImage()">
+                    <div class="ui-grid-b ui-responsive">
+                        <div class="ui-block-a" data-bind="visible: $parent.clientVM.FirstAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: $parent.clientVM.FirstAdLink()}" target="_blank"><img
+                                        data-bind="attr: { src: $parent.clientVM.FirstAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-b" data-bind="visible: $parent.clientVM.SecondAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: $parent.clientVM.SecondAdLink()}" target="_blank"><img
+                                        data-bind="attr: { src: $parent.clientVM.SecondAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-c" data-bind="visible: $parent.clientVM.ThirdAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: $parent.clientVM.ThirdAdLink()}" target="_blank"><img
+                                        data-bind="attr: { src: $parent.clientVM.ThirdAdImage() }" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="popup" id="actionMenu3" data-theme="a" data-history="false" data-bind="with: mainVM">
+                <ul data-role="listview" data-inset="true" data-theme="a">
+                    <li data-role="divider" data-theme="b">Choose an action:</li>
+                    <li data-icon="lj-home"><a href="#" data-bind="click: resetPage">Start Over</a></li>
+                    <li data-icon="lj-email"><a data-bind="click: sendEmailClick.bind($data, '3')" data-rel="popup">Email
+                            Directions</a></li>
+                    <li data-icon="lj-print"><a data-bind="click: printActionClick.bind($data, '3')" data-rel="popup">Print</a></li>
+                    <li data-icon="lj-summary"><a href="#printable" class="pageButton summaryButton" data-rel="popup">View
+                            Summary</a></li>
+                    <li><a data-bind="click: pushReverseDirections">Reverse Directions</a></li>
+                    <li><a data-bind="click: pushNextDestination">Go to Next Destination</a></li>
+                    <li data-icon="lj-nav" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus() || (end_location().isOffCampus && end_location().isOffCampus()))"><a
+                            data-bind="    attr: { href: googleDirectionsVM.url }" target="blank" rel="external">Use
+                            Navigation App</a></li>
+                </ul>
+            </div>
+
+            <div data-role="popup" id="printpopup3" data-overlay-theme="a" data-history="false" class="printpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: mainVM.printableVM">
+                <a href="#" data-rel="back" class="ui-btn-icon-notext ui-icon-delete ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <div data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) || (end_location().isOffCampus && end_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="driveMap" id="driveMap3" class="driveMap" data-bind="checked: drivingMapVisible">
+                        <label for="driveMap3">Google Map</label>
+                        <input type="checkbox" name="driveDir" id="driveDir3" class="driveDir" data-bind="checked: drivingDirectionsVisible">
+                        <label for="driveDir3">Driving Directions</label>
+                        <input type="checkbox" name="walkMap" id="walkMap3" class="walkMap" data-bind="checked: walkingMapVisible">
+                        <label for="walkMap3">Hospital Maps</label>
+                        <input type="checkbox" name="walkDir" id="walkDir3" class="walkDir" data-bind="checked: walkingDirectionsVisible">
+                        <label for="walkDir3">Walking Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <div data-bind="visible: (start_location().isOffCampus && !start_location().isOffCampus()) && (end_location().isOffCampus && !end_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="walkMap" id="walkMap3b" class="walkMap" data-bind="checked: walkingMapVisible">
+                        <label for="walkMap3b">Hospital Maps</label>
+                        <input type="checkbox" name="walkDir" id="walkDir3b" class="walkDir" data-bind="checked: walkingDirectionsVisible">
+                        <label for="walkDir3b">Walking Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <a href="#printable" class="pageButton getDirectionsButton printButton ui-btn ui-corner-all" data-bind="css: { 'lj-disabled': !isPrintEnabled() },attr:{target:mainVM.clientVM.EnableOpenPrintPreviewInNewTab()?'_blank':'_self'}">View
+                    Printable Page</a>
+            </div>
+            <div data-role="popup" id="emailpopup3" data-overlay-theme="a" data-history="false" class="emailpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: mainVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <fieldset class="popupFields">
+                    <legend data-bind="html: emailLegendHtml">Who do you want to email?</legend>
+                    <input type="text" data-bind="value: emailToSendTo, valueUpdate: 'keyup'" placeholder="Enter an email address ..." />
+                    <span class="popupWarningSpan">Email address syntax incorrect.</span>
+                </fieldset>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '3', 0)">Edit
+                    Email</a>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '3', 1)">Send
+                    Email</a>
+                <div class="warningMessage" data-bind="text: EmailWarning"></div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: end_location().isOffCampus && !end_location().isOffCampus() && start_location().isOffCampus && start_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap ui-btn-active ui-state-persist"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+
+            <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdMobile() && (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == true">
+                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdMobile() }" /></a>
+            </div>
+
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: end_location().isOffCampus && !end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap ui-btn-active ui-state-persist"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                </ul>
+            </div>
+
+            <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdMobile() && end_location().isOffCampus && !end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && isFooterNavBar() == true">
+                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdMobile() }" /></a>
+            </div>
+
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: end_location().isOffCampus && end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections">Walking Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap ui-btn-active ui-state-persist"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!--footer-->
+
+        <div data-role="panel" id="legendPanel" data-display="overlay" data-position="right" data-theme="a"
+            data-position-fixed="true">
+            <a href="#walkingHeader" data-rel="close" class="ui-btn ui-corner-all ui-icon-delete" data-icon-pos="left">Close</a>
+            <ul class="legendList" data-bind="foreach: clientVM.legendArray">
+                <li data-bind="html: '<span class=\'' + type + ' legendIcon\' ></span><span class=\'legendText\' >' + text + '</span>'"></li>
+            </ul>
+        </div>
+        <!-- /panel -->
+    </div>
+    <!-- /page -->
+
+    <div data-role="page" data-theme="a" id="walkingdirections" class="ljMapPage">
+        <div id="loadingCover4" class="loadingCover">
+            <h3 id="loadingImage">Loading</h3>
+        </div>
+
+
+        <div data-role="header" class="appHeader">
+            <a href="#" data-bind="click: resetPage" data-role="none" class="logo">
+                <img data-bind="attr: { src: clientVM.imagePath }" alt="Home">
+            </a>
+            <a href="#" data-bind="click: resetPage" class="startOverButton ui-mini ui-btn ui-corner-all ui-icon-lj-home ui-btn-icon-left">Start
+                over</a>
+        </div>
+        <!-- /header -->
+
+        <div class="ui-content" role="main" data-bind="with: ljdirectionsVM">
+
+            <div class="ljContainer">
+                <dl class="startend">
+                    <dt>From: </dt>
+                    <dd>
+                        <span data-bind="text: $parent.start_location().DisplayName">123 Address Rd. Cleveland, OH
+                            44333 </span>
+                    </dd>
+                    <dt class="to">To: </dt>
+                    <dd class="to" data-bind="text: $parent.end_location().DisplayName">
+                        Admissions
+                    </dd>
+                </dl>
+                <div class="headerButtons">
+                    <a href="#printpopup4" data-rel="popup" class="printButton ui-mini ui-btn ui-corner-all ui-btn-inline ui-icon-lj-print ui-btn-icon-notext"
+                        data-position-to="window">Print</a>
+                    <a href="#actionMenu4" id="actionButton4" class="actionButton ui-mini ui-btn ui-corner-all ui-btn-a ui-btn-inline ui-icon-bars"
+                        data-rel="popup" data-position-to="#actionButton4">More</a>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: $parent.end_location().isOffCampus && !$parent.end_location().isOffCampus() && $parent.start_location().isOffCampus && $parent.start_location().isOffCampus() && $parent.isFooterNavBar() == false">
+                    <ul>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:$parent.clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:$parent.clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections ui-btn-active ui-state-persist">Walking
+                                Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.MapsTabLongText">Hospital Maps</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: $parent.end_location().isOffCampus && !$parent.end_location().isOffCampus() && $parent.start_location().isOffCampus && !$parent.start_location().isOffCampus() && $parent.isFooterNavBar() == false">
+                    <ul>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:$parent.clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections ui-btn-active ui-state-persist">Walking
+                                Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.MapsTabLongText">Hospital Maps</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="ljNavBar" data-bind="visible: $parent.end_location().isOffCampus && $parent.end_location().isOffCampus() && $parent.start_location().isOffCampus && !$parent.start_location().isOffCampus() && $parent.isFooterNavBar() == false">
+                    <ul>
+                        <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:$parent.clientVM.WalkingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections ui-btn-active ui-state-persist">Walking
+                                Directions</a></li>
+                        <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.MapsTabLongText">Hospital Maps</a></li>
+                        <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                                data-bind="mobileBtnText:$parent.clientVM.GoogleTabLongText">Google Map</a></li>
+                        <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:$parent.clientVM.DrivingTabLongText"
+                                class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+                <div class='mapHeader'>
+                    <h1 class="textToShowWhenLarge" data-bind="html: Note"></h1>
+                    <h1 class="textToShowWhenSmall" data-bind="html: ShortNote"></h1>
+                </div>
+                <div class="ljDirectionsContainer" data-bind="html: directionsHTML">
+                </div>
+                <div class="ljAdsFooter" data-bind="visible: $parent.clientVM.FirstAdImage() || $parent.clientVM.SecondAdImage() || $parent.clientVM.ThirdAdImage()">
+                    <div class="ui-grid-b ui-responsive">
+                        <div class="ui-block-a" data-bind="visible: $parent.clientVM.FirstAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: $parent.clientVM.FirstAdLink()}" target="_blank"><img
+                                        data-bind="attr: { src: $parent.clientVM.FirstAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-b" data-bind="visible: $parent.clientVM.SecondAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: $parent.clientVM.SecondAdLink()}" target="_blank"><img
+                                        data-bind="attr: { src: $parent.clientVM.SecondAdImage() }" /></a>
+                            </div>
+                        </div>
+                        <div class="ui-block-c" data-bind="visible: $parent.clientVM.ThirdAdImage()">
+                            <div class="ui-body">
+                                <a data-bind="attr: {href: $parent.clientVM.ThirdAdLink()}" target="_blank"><img
+                                        data-bind="attr: { src: $parent.clientVM.ThirdAdImage() }" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="popup" id="actionMenu4" data-theme="a" data-history="false" data-bind="with: mainVM">
+                <ul data-role="listview" data-inset="true" data-theme="a">
+                    <li data-role="divider" data-theme="b">Choose an action:</li>
+                    <li data-icon="lj-home"><a href="#" data-bind="click: resetPage">Start Over</a></li>
+                    <li data-icon="lj-email"><a data-bind="click: sendEmailClick.bind($data, '4')" data-rel="popup">Email
+                            Directions</a></li>
+                    <li data-icon="lj-print"><a data-bind="click: printActionClick.bind($data, '4')" data-rel="popup">Print</a></li>
+                    <li data-icon="lj-summary"><a href="#printable" class="pageButton summaryButton" data-rel="popup">View
+                            Summary</a></li>
+                    <li><a data-bind="click: pushReverseDirections">Reverse Directions</a></li>
+                    <li><a data-bind="click: pushNextDestination">Go to Next Destination</a></li>
+                    <li data-icon="lj-nav" data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) || (end_location().isOffCampus && end_location().isOffCampus())"><a
+                            data-bind="    attr: { href: googleDirectionsVM.url }" target="blank" rel="external">Use
+                            Navigation App</a></li>
+                </ul>
+            </div>
+
+            <div data-role="popup" id="printpopup4" data-overlay-theme="a" data-history="false" class="printpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: mainVM.printableVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <div data-bind="visible: (start_location().isOffCampus && start_location().isOffCampus()) || (end_location().isOffCampus && end_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="driveMap" id="driveMap4" class="driveMap" data-bind="checked: drivingMapVisible">
+                        <label for="driveMap4">Google Map</label>
+                        <input type="checkbox" name="driveDir" id="driveDir4" class="driveDir" data-bind="checked: drivingDirectionsVisible">
+                        <label for="driveDir4">Driving Directions</label>
+                        <input type="checkbox" name="walkMap" id="walkMap4" class="walkMap" data-bind="checked: walkingMapVisible">
+                        <label for="walkMap4">Hospital Maps</label>
+                        <input type="checkbox" name="walkDir" id="walkDir4" class="walkDir" data-bind="checked: walkingDirectionsVisible">
+                        <label for="walkDir4">Walking Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <div data-bind="visible: (start_location().isOffCampus && !start_location().isOffCampus()) && (end_location().isOffCampus && !end_location().isOffCampus())">
+                    <fieldset class="popupFields">
+                        <legend>What would you like to print?</legend>
+                        <input type="checkbox" name="walkMap" id="walkMap4b" class="walkMap" data-bind="checked: walkingMapVisible">
+                        <label for="walkMap4b">Hospital Maps</label>
+                        <input type="checkbox" name="walkDir" id="walkDir4b" class="walkDir" data-bind="checked: walkingDirectionsVisible">
+                        <label for="walkDir4b">Walking Directions</label>
+                        <span class="popupWarningSpan">Please make a selection.</span>
+                    </fieldset>
+                </div>
+                <a href="#printable" class="pageButton getDirectionsButton printButton ui-btn ui-corner-all" data-bind="css: { 'lj-disabled': !isPrintEnabled() },attr:{target:mainVM.clientVM.EnableOpenPrintPreviewInNewTab()?'_blank':'_self'}">View
+                    Printable Page</a>
+            </div>
+            <div data-role="popup" id="emailpopup4" data-overlay-theme="a" data-history="false" class="emailpopup popupPrompt ui-content"
+                style="position: relative; top: 0px" data-bind="with: mainVM">
+                <a href="#" data-rel="back" class="ui-icon-delete ui-btn-icon-notext ui-btn ui-corner-all ui-btn-a ui-btn-right">Close</a>
+                <fieldset class="popupFields">
+                    <legend data-bind="html: emailLegendHtml">Who do you want to email?</legend>
+                    <input type="text" data-bind="value: emailToSendTo, valueUpdate: 'keyup'" placeholder="Enter an email address ..." />
+                    <span class="popupWarningSpan">Email address syntax incorrect.</span>
+                </fieldset>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '4', 0)">Edit
+                    Email</a>
+                <a class="mailToStatementButton ui-btn ui-corner-all" href="#" data-bind="click: mailToStatement.bind($data, '4', 1)">Send
+                    Email</a>
+                <div class="warningMessage" data-bind="text: EmailWarning"></div>
+            </div>
+        </div>
+        <!-- /content -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: end_location().isOffCampus && !end_location().isOffCampus() && start_location().isOffCampus && start_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections ui-btn-active ui-state-persist">Walking
+                            Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+
+            <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdMobile() && (start_location().isOffCampus && start_location().isOffCampus()) && end_location().isOffCampus && !end_location().isOffCampus() && isFooterNavBar() == true">
+                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdMobile() }" /></a>
+            </div>
+
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: end_location().isOffCampus && !end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections ui-btn-active ui-state-persist"></a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText"></a></li>
+                </ul>
+            </div>
+
+            <div class="ljAdsFooter" data-bind="visible: clientVM.FirstAdMobile() && end_location().isOffCampus && !end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && isFooterNavBar() == true">
+                <a data-bind="attr: {href: clientVM.FirstAdLink()}" target="_blank"><img data-bind="attr: { src: clientVM.FirstAdMobile() }" /></a>
+            </div>
+
+            <div data-role="navbar" class="ljNavBar" data-bind="visible: end_location().isOffCampus && end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && isFooterNavBar() == true">
+                <ul>
+                    <li class="walkingDirections"><a href="#walkingdirections" data-bind="mobileBtnText:clientVM.WalkingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-walkingDirections ui-btn-active ui-state-persist">Walking
+                            Directions</a></li>
+                    <li class="hospitalMap"><a href="#walking" class="pageButton ui-btn-icon-left ui-icon-lj-walkingMap"
+                            data-bind="mobileBtnText:clientVM.MapsTabShortText">Hospital Maps</a></li>
+                    <li class="googleMap"><a href="#driving" class="pageButton ui-btn-icon-left ui-icon-lj-drivingMap"
+                            data-bind="mobileBtnText:clientVM.GoogleTabShortText">Google Map</a></li>
+                    <li class="drivingDirections"><a href="#drivingdirections" data-bind="mobileBtnText:clientVM.DrivingTabShortText"
+                            class="pageButton ui-btn-icon-left ui-icon-lj-drivingDirections">Driving Directions</a></li>
+                </ul>
+            </div>
+            <!-- /navbar -->
+        </div>
+        <!--footer-->
+    </div>
+    <!-- /page -->
+
+    <div data-role="page" data-theme="a" id="printable" style="background: #ffffff" data-bind="with: printableVM">
+        <!-- <a id="printingBackButton" data-bind="click: goBack" href="#" class="printingBackButton ui-icon-back ui-mini ui-btn ui-corner-all ui-btn-inline ui-btn-icon-left">Go Back</a> -->
+        <div class="ui-content" role="main">
+            <div id="ljPrintableContainer">
+                <div id="print-button-container">
+                     <button class="printingIcon" onclick="window.print()">Print Directions</button>
+                </div>
+                <div class="ui-block-a" class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <h1 data-inline="true">Directions:</h1>
+                        <p class="startend">
+                            <span><b>From: </b> <!-- ko text: start_location().DisplayName -->
+                                <!-- /ko --></span>
+                            <span><b>To: </b> <!-- ko text: end_location().DisplayName -->
+                                <!-- /ko --></span>
+                        </p>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="printHeader">
+                            <!-- ko text: $parent.clientVM.PrintHeader -->
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="directionsContainer" data-bind="attr:{'data-google-visible' : (!!drivingDirectionsVisible()+ '1')},visible: end_location().isOffCampus && end_location().isOffCampus() && start_location().isOffCampus && !start_location().isOffCampus() && (walkingMapVisible() || walkingDirectionsVisible())">
+                    <h2 data-bind="text: (walkingDirectionsVisible() ? 'Walking Directions' : 'Hospital Maps')">Walking
+                        Directions</h2>
+                    <div class="walkingStepsDiv" data-bind="html:printableHTML, afterRender:renderAllMaps()"></div>
+                </div>
+                <div class="directionsContainer" data-bind="visible: drivingMapVisible() || drivingDirectionsVisible()">
+                    <h2>Driving Directions</h2>
+                    <img class="google-map-image" data-bind="attr: { src: staticUrl }, visible: drivingMapVisible" />
+                    <div id="mapsDirections" data-bind="visible: drivingDirectionsVisible"></div>
+                </div>
+                <div class="directionsContainer" data-bind="attr:{'data-google-visible':(!!drivingDirectionsVisible() + '3')},visible: end_location().isOffCampus && !end_location().isOffCampus() && (walkingMapVisible() || walkingDirectionsVisible())">
+                    <h2 data-bind="text: (walkingDirectionsVisible() ? 'Walking Directions' : 'Hospital Maps')">Walking
+                        Directions</h2>
+                    <div class="walkingStepsDiv" data-bind="html:printableHTML, afterRender:renderAllMaps()"></div>
+                </div>
+                <div class="printFooter" data-bind="html:$parent.clientVM.PrintFooter"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).delegate("#home", "pagecreate", function () {
+            $(".ljContainer").css('background', '#fff');
+        });
+
+        $(document).delegate("#driving", "pagecreate", function () {
+            $(".ljContainer").css('background', '#fff');
+        });
+
+        $(document).delegate("#drivingdirections", "pagecreate", function () {
+            $(".ljContainer").css('background', '#fff');
+        });
+
+        $(document).delegate("#walking", "pagecreate", function () {
+            $(".ljContainer").css('background', '#fff');
+        });
+
+        $(document).delegate("#walkingdirections", "pagecreate", function () {
+            $(".ljContainer").css('background', '#fff');
+        });
+        $(document).bind('mobileinit', function () {
+            $.mobile.page.prototype.options.keepNative = "radio#yesHospital";
+        });
+
+        $(document).ready(function () {
+            if (navigator.userAgent.indexOf('MSIE') > 0) {
+                $("html").addClass("ie");
+            }
+        });
+    </script>
+    <div id="hiddenfield" style='display: none'></div>
+    <div id="overflowdiv" style="overflow:hidden;width:0;height:0;"></div>
+</body>
+</html>

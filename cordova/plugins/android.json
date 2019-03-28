@@ -1,0 +1,24 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "org.sample.hybridandroidapp"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "org.sample.hybridandroidapp"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "org.sample.hybridandroidapp"
+    },
+    "cordova-plugin-hybrid": {
+      "PACKAGE_NAME": "org.sample.hybridandroidapp"
+    }
+  },
+  "dependent_plugins": {}
+}

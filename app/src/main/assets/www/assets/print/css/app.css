@@ -1,0 +1,3212 @@
+/* CSS specific to Logic Junction Wayfinding */
+html, body {
+    height: 100%;
+    background: #FFF !important;
+    /* background: #e0e0e0; */
+    /* background-image: -webkit-gradient(linear,left top,left bottom,from( #b7b7b7 ),to( #b7b7b7 ));
+    background-image: -webkit-linear-gradient( #b7b7b7,#b7b7b7 );
+    background-image: -moz-linear-gradient( #b7b7b7,#b7b7b7 );
+    background-image: -ms-linear-gradient( #b7b7b7,#b7b7b7 );
+    background-image: -o-linear-gradient( #b7b7b7,#b7b7b7 );
+    background-image: linear-gradient( #b7b7b7,#b7b7b7 ); */
+}
+
+div.loadingCover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #e0e0e0;
+    /* IE 8 */
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  background: rgba(164, 184, 197, 0.82);*/
+}
+
+.eventsPickingIE8 {
+    display: none;
+}
+
+.standardEventPicker {
+    display: block;
+}
+
+html.lte8 .standardEventPicker {
+    display: none;
+}
+
+html.lte8 .eventsPickingIE8 {
+    display: block;
+}
+
+html.lte8 div.loadingCover {
+    -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr=#D1A4B8C5, endColorstr=#D1A4B8C5)"; /* For IE8 */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#D1A4B8C5, endColorstr=#D1A4B8C5); /* < IE 7 */
+    zoom: 1;
+}
+
+.ui-btn.ui-mini {
+    font-size: 12.5px;
+}
+
+div.loadingCover.hide {
+    display: none;
+}
+
+div.loadingCover h3 {
+    color: rgba(0, 153, 255, 1);
+    text-align: center;
+    position: absolute;
+    padding: 40px;
+    top: 120px;
+    left: 50%;
+    margin-left: -140px;
+    width: 200px;
+    background: #fff url(../images/ajax-loader.gif) no-repeat 50% 60%;
+    height: 120px;
+    -webkit-border-radius: 12px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+    border-radius: 12px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0px 0px 70px 0px #747474; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+    box-shadow: 0px 0px 70px 0px #747474; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+}
+
+div.loadingCover h4 {
+    color: rgba(0, 153, 255, 1);
+    text-align: center;
+    position: absolute;
+    padding: 40px;
+    top: 120px;
+    left: 50%;
+    margin-left: -140px;
+    width: 200px;
+    background: #fff no-repeat 50% 60%;
+    height: 120px;
+    -webkit-border-radius: 12px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+    border-radius: 12px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0px 0px 70px 0px #747474; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+    box-shadow: 0px 0px 70px 0px #747474; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+}
+
+div.ui-page {
+    background-color: #e0e0e0;
+}
+
+div.appHeader.ui-bar-inherit {
+    background: transparent;
+    border: 0;
+    padding: 10px 10px 0;
+}
+
+div.appHeader {
+    min-height: 65px;
+}
+
+    div.appHeader .logo {
+        position: absolute;
+    }
+
+        div.appHeader .logo img {
+            width: auto;
+            height: auto;
+            display: none;
+        }
+
+            div.appHeader .logo img.show {
+                display: block;
+            }
+
+    div.appHeader .logo {
+        border: 0;
+        -webkit-box-shadow: 0 0px 0px;
+        background: transparent;
+    }
+
+fieldset.outer {
+    position: relative;
+    width: 100%;
+}
+
+    fieldset.outer#from {
+        padding: 0;
+    }
+
+    fieldset.outer#to {
+        padding: 0;
+    }
+
+    fieldset.outer legend {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0 0 10px 0;
+    }
+
+    fieldset.outer#to .location-stack {
+        min-height: 8.375em;
+    }
+
+fieldset.autocomplete {
+    position: relative;
+}
+
+    fieldset.autocomplete div.ui-input-text {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    fieldset.autocomplete .ui-listview-inset,
+    fieldset.autocomplete .ui-panel-inner .ui-listview-inset {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+ul.autocompleteSuggestions {
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+}
+
+html.ie8 ul.autocompleteSuggestions {
+    position: relative;
+}
+
+ul.autocompleteSuggestions li a {
+    text-overflow: ellipsis;
+}
+
+html.lte8 .ui-input-search input {
+    min-height: 0px;
+}
+
+div.googlePowered {
+    float: right;
+}
+
+div.resultsList {
+    float: left;
+}
+
+fieldset#autocompleteGoogle #IE8 {
+    display: none;
+}
+
+html.lte8 fieldset#autocompleteGoogle #IE8 {
+    display: inherit;
+}
+
+html.lte8 fieldset#autocompleteGoogle #NonIE8 {
+    display: none;
+}
+
+fieldset.onCampusButtons {
+    width: 25%;
+    margin: 0 auto;
+    position: relative;
+    top: 0.6em;
+}
+
+    fieldset.onCampusButtons .ui-icon-lj-left-arrow-green {
+        background: transparent url(../images/ljSprite.png) no-repeat -214px 0;
+        width: 36px;
+        height: 36px;
+        top: 26%!important;
+    }
+
+table#destination-list-table {
+    display: table;
+    width: 100%;
+}
+
+    table#destination-list-table tfoot td {
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+table#events-list-table {
+    display: table;
+    width: 100%;
+}
+
+    table#events-list-table tfoot td {
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+#eventspage div.ui-controlgroup-label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+div.ui-datepicker {
+    display: none;
+}
+
+.ui-btn.ui-icon-lj-home:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -71px 1px;
+}
+
+.ui-btn.ui-icon-lj-print:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: 2px 2px;
+}
+
+.ui-btn.ui-icon-lj-summary:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -106px 2px;
+}
+
+.ui-btn.ui-icon-lj-nav:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -35px 3px;
+}
+
+.ui-btn.ui-icon-lj-location:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -142px 2px;
+}
+
+.ui-btn.ui-icon-lj-plus:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -71px 1px;
+}
+
+.ui-btn.ui-icon-lj-key:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -214px 1px;
+}
+
+.ui-btn.ui-icon-lj-grid:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -250px 2px;
+}
+
+.ui-btn.ui-icon-lj-email:after {
+    background-image: url(../images/ljSprite-18-white.png);
+    background-position: -286px 2px;
+}
+
+.ui-mini.ui-btn-icon-notext {
+    padding: 3px;
+}
+
+div.ui-popup ul.ui-listview li.ui-btn div.ui-input-text {
+    min-width: 170px;
+    width: 170px;
+    max-width: 170px;
+    display: inline-block;
+}
+
+.ljNavBar .ui-icon-shadow {
+    -moz-box-shadow: 0px 0px 0 0 transparent;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+    box-shadow: 0px 0px 0px 0px transparent;
+    background: transparent;
+}
+
+.ljNavBar .ui-btn-icon-left > .ui-btn-inner > .ui-icon,
+.ljNavBar .ui-btn-icon-right > .ui-btn-inner > .ui-icon {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: 32px;
+    height: 32px;
+    top: 11px;
+}
+
+.ljNavBar a.ui-btn-icon-left:after, .ljNavBar a.ui-btn-icon-right:after {
+    top: 0;
+    margin-top: 5px;
+    width: 35px;
+    height: 30px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.ljNavBar a.ui-icon-lj-drivingMap:after {
+    background: transparent url(../images/ljSprite-TabIcons.png) no-repeat -128px -1px;
+}
+
+.ljNavBar a.ui-btn-active.ui-icon-lj-drivingMap:after {
+    background-position: -128px -67px;
+}
+
+.ljNavBar a.ui-icon-lj-drivingDirections:after {
+    background: transparent url(../images/ljSprite-TabIcons.png) no-repeat -192px -3px;
+}
+
+.ljNavBar a.ui-btn-active.ui-icon-lj-drivingDirections:after {
+    background-position: -192px -67px;
+}
+
+.ljNavBar a.ui-icon-lj-walkingDirections:after {
+    background: transparent url(../images/ljSprite-TabIcons.png) no-repeat -64px -3px;
+}
+
+.ljNavBar a.ui-btn-active.ui-icon-lj-walkingDirections:after {
+    background-position: -64px -67px;
+}
+
+.ljNavBar a.ui-icon-lj-walkingMap:after {
+    background: transparent url(../images/ljSprite-TabIcons.png) no-repeat 0 -3px;
+}
+
+.ljNavBar a.ui-btn-active.ui-icon-lj-walkingMap:after {
+    background-position: 0 -67px;
+}
+
+div[data-role="footer"].ui-bar-a {
+    border: 0;
+}
+
+div[data-role="footer"] .ui-btn-inner {
+    text-overflow: clip!important;
+}
+
+div[data-role="footer"] .ui-btn-text {
+    height: 32px;
+}
+/* hide icons on mobile footer menu */
+div.ljMapPage div.ui-footer .ljNavBar .ui-btn:after {
+    display: none;
+}
+
+div.ljMapPage div.ui-footer .ljNavBar .ui-btn.ui-btn-icon-left {
+    padding-left: 11px;
+}
+
+div[data-role="page"] a.getDirectionsButton.ui-btn, div[data-role="page"] a.getDirectionsButton.ui-btn:visited {
+    width: 65%;
+    margin: 0 auto;
+    -moz-box-shadow: 0px 0px 13px 0px #9e9e9e;
+    -webkit-box-shadow: 0px 0px 13px 0px #9e9e9e;
+    box-shadow: 0px 0px 13px 0px #9e9e9e;
+    background: #00ca71;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ca71', endColorstr='#00b25f');
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00ca71), color-stop(1, #00b25f) );
+    background: -moz-linear-gradient( center top, #00ca71 5%, #00b25f 100% );
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: Arial;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.getDirectionsButton:hover {
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00b25f), color-stop(1, #00ca71) );
+    background: -moz-linear-gradient( center top, #00b25f 5%, #00ca71 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00b25f', endColorstr='#00ca71');
+    background-color: #00b25f;
+}
+
+.getDirectionsButton:active {
+    position: relative;
+    top: 1px;
+}
+
+a.getDirectionsButton {
+    font-size: 1.5em;
+    padding: 0.3em;
+    font-weight: normal;
+}
+
+a.getDirectionsButton {
+    color: #fff;
+}
+
+    a.getDirectionsButton.ui-btn-up-a:visited,
+    a.getDirectionsButton.ui-btn-up-a a.ui-link-inherit {
+        color: #fff;
+    }
+
+    a.getDirectionsButton.ui-btn-hover-a:visited,
+    a.getDirectionsButton.ui-btn-hover-a:hover,
+    a.getDirectionsButton.ui-btn-hover-a a.ui-link-inherit {
+        color: #fff;
+    }
+
+ul.autocompleteSuggestions li.ui-btn-hover-a {
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e0e0e0), color-stop(1, #b7b7b7) );
+    background: -moz-linear-gradient( center top, #e0e0e0 5%, #b7b7b7 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0e0e0', endColorstr='#b7b7b7');
+    background-color: #00b25f;
+}
+
+a.getDirectionsButton.ui-icon-lj-arrow:after {
+    background: transparent url(../images/ljSprite.png) no-repeat 0 0;
+    width: 36px;
+    height: 36px;
+    top: 30%!important;
+    margin-top: -10px;
+}
+
+a.getDirectionsButton.lj-disabled {
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #858585), color-stop(1, #5a5a5a) );
+    background: -moz-linear-gradient( center top, #858585 5%, #5a5a5a 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#858585', endColorstr='#5a5a5a');
+    background-color: #858585;
+    opacity: .8;
+}
+
+div.getDirectionsBtnDiv {
+    padding: 10px;
+}
+
+fieldset.popupFields {
+    padding: 0 0 1em;
+}
+
+    fieldset.popupFields legend {
+        font-weight: bold;
+        color: #0099ff;
+        font-size: 1.4em;
+        text-align: center;
+        padding: 0 0 1.5em;
+    }
+
+    fieldset.popupFields label {
+        margin-bottom: 1em;
+    }
+
+    fieldset.popupFields ul.parkingTypes {
+        list-style: none;
+        padding-left: 0;
+    }
+
+span.popupWarningSpan {
+    opacity: 0;
+    text-align: center;
+    color: #ff0000;
+    display: block;
+}
+
+    span.popupWarningSpan.show {
+        opacity: 1;
+    }
+
+html.lte8 span.popupWarningSpan {
+    display: none;
+}
+
+    html.lte8 span.popupWarningSpan.show {
+        display: block;
+    }
+
+div[data-role="page"] div.popupPrompt a.getDirectionsButton.ui-btn {
+    width: 95%;
+}
+
+html.ie9 div#printpopup1 {
+    width: 325px;
+    margin: 0 auto;
+}
+
+html.ie9 div#printpopup2 {
+    width: 325px;
+    margin: 0 auto;
+}
+
+html.ie9 div#printpopup3 {
+    width: 325px;
+    margin: 0 auto;
+}
+
+html.ie9 div#printpopup4 {
+    width: 325px;
+    margin: 0 auto;
+}
+
+html.ie9 div#popupPrompt {
+    width: 425px;
+    margin: 0 auto;
+}
+
+a.mailToStatementButton.ui-btn.ui-shadow.ui-btn-corner-all.getDirectionsButton {
+    margin-bottom: 10px;
+}
+
+html.lte8 div.appHeader {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+html.lte8 div.ljContainer {
+    padding: 30px 50px 50px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+html.lte8 div.ljFooter .ui-grid-b .ui-body {
+    min-height: 90px;
+}
+
+html.lte8 div.ljFooter .ui-grid-b .ui-block-a,
+html.lte8 div.ljFooter .ui-grid-b .ui-block-b {
+    border-right: 2px solid #777;
+}
+
+    html.lte8 div.ljFooter .ui-grid-b .ui-block-a .ui-body {
+        padding-left: 0;
+    }
+
+    html.lte8 div.ljFooter .ui-grid-b .ui-block-b .ui-body {
+        padding-left: 47px;
+        padding-right: 20px;
+    }
+
+html.lte8 div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+    padding-right: 0;
+    text-align: center;
+}
+
+html.lte8 div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+    padding: 1em 4.3em;
+}
+
+html.lte8 label.orLabel {
+    display: none;
+}
+
+html.lte8 a#myLocation {
+    display: none;
+}
+
+div.ljContainer[style] {
+    background-color: #fff;
+    padding: auto;
+}
+
+div.ljMapPage div.ui-content .ljContainer div.mapHeader {
+    background: #009de0;
+    overflow: hidden;
+    position: relative;
+}
+
+    div.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+        font-size: 1.4em;
+        color: #fff;
+        text-shadow: 1px 1px 4px #000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        top: 3px;
+        padding: 0 0 2px 0.5em;
+    }
+
+html.lte8 div.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+    width: 56%;
+}
+
+div.ljMapPage div.ui-content .ljContainer div.mapHeader .ui-btn {
+    margin-top: 0;
+}
+
+div.ljMapPage div.ui-content .ljContainer div.mapHeader span.currentStep {
+    color: #fff;
+    margin-right: 0.625em;
+    text-shadow: 1px 1px 1px #000;
+}
+
+div.ljMapPage div.ui-content .ljContainer div.mapHeader a#previousButton.ui-disabled {
+    display: none;
+}
+
+div.ljMapPage div.ui-content .ljContainer div.mapNav {
+    text-align: center;
+    white-space: nowrap;
+    /* background: #009de0; */ 
+    /* removed for blue background */
+}
+
+html.lte8 div.ljMapPage div.ui-content .ljContainer div.mapNav {
+    text-align: right;
+    position: absolute;
+    float: none;
+    right: 1em;
+    top: 0em;
+    padding: 0.5em 0 0.5em 0.5em;
+}
+
+div.ljMapPage div.ui-content .ljContainer .headerButtons {
+    display: block;
+    position: absolute;
+    right: 1em;
+    top: 1.25em;
+}
+/* div.ljMapPage a.actionButton{position:absolute;right:0;top:1.25em;right:1em;} */
+
+div.ljMapPage .ui-panel-content-wrap {
+    overflow: hidden;
+    border: 0;
+}
+
+div.ljMapPage div.ui-header.appHeader {
+    position: relative;
+}
+
+div.ljMapPage div.ui-content {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+}
+
+html.lte8 div.ljMapPage div.ui-content {
+    top: 5px;
+}
+
+    html.lte8 div.ljMapPage div.ui-content .ljContainer {
+        top: 5.2em;
+        width: 900px;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0.5em 0 0 0;
+    }
+
+div#drivingdirections.ljMapPage div.ui-content,
+div#walkingdirections.ljMapPage div.ui-content {
+    position: relative;
+    bottom: 0;
+    top: 0;
+}
+
+    div#drivingdirections.ljMapPage div.ui-content .ljContainer,
+    div#walkingdirections.ljMapPage div.ui-content .ljContainer {
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+        div#drivingdirections.ljMapPage div.ui-content .ljContainer .ljMapContainer,
+        div#walkingdirections.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+            position: relative;
+            bottom: 0;
+        }
+
+li.directionItem {
+    display: table-row;
+    padding-left: 10px;
+}
+
+    li.directionItem span {
+        display: table-cell;
+        padding-right: 10px;
+        vertical-align: top;
+    }
+
+div#data div#destination-list-div {
+    background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+    min-height: 66px;
+}
+
+div#eventspage div#events-list-div {
+    background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+    min-height: 66px;
+}
+
+html.lte8 div#eventspage div.ui-controlgroup-label {
+    min-width: 150px;
+}
+
+div.ljMapPage div.ui-content .ljContainer {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+
+    div.ljMapPage div.ui-content .ljContainer #SVGBox {
+        position: absolute;
+        top: 11.3em;
+        bottom: 0.7em;
+        left: 0;
+        right: 0;
+        padding: 0;
+        background: #d8d8d8 url(../images/ajax-loader.gif) no-repeat 50% 50%;
+        overflow: hidden;
+    }
+
+body.featureAds div.ljMapPage div.ui-content .ljContainer #SVGBox {
+    bottom: 100px;
+}
+
+div.ljMapPage div.ui-content .ljContainer #SVGBox #mainSVG {
+    background: #d8d8d8;
+}
+
+div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+    position: absolute;
+    bottom: 0.7em;
+    left: 0em;
+    right: 0;
+    padding: 0;
+}
+
+body.featureAds div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+    bottom: 100px;
+}
+
+body.featureAds div#drivingdirections div.ui-content .ljContainer .ljDirectionsContainer {
+    padding: 0.5em 3.125em 7.8em 3.125em;
+}
+
+html.lte8 div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+    top: 11.3em;
+}
+
+div.ljMapPage div.ui-content .ljContainer .ljMapContainer #map_canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/*div#printable div.mappingDiv{top:0;left:0;position:absolute; width:250px; height:254px; background: url(../images/ajax-loader.gif) no-repeat 50% 50%; background-color: lightgray ;}*/
+div#printable div.mappingDiv {
+    width: 250px;
+    height: 254px;
+    background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+    background-color: lightgray;
+}
+
+div#walkingdirections div.mappingDiv {
+    width: 250px;
+    float: right;
+    background-color: lightgray;
+    background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+    min-width: 250px;
+    min-height: 250px;
+    height: 250px;
+    padding-top: 30px;
+    text-align: right;
+}
+
+    div#walkingdirections div.mappingDiv h4 {
+        display: none;
+    }
+
+html.lte8 div#walkingdirections div.directionsDiv h3 {
+    margin-top: 0;
+}
+
+html.lte8 div#walkingdirections div.mappingDiv {
+    width: 250px;
+    background-color: lightgray;
+    overflow: hidden;
+    border: 2px solid #000;
+    float: right;
+    padding-top: 0px;
+    border: 2px solid black;
+}
+
+    html.lte8 div#walkingdirections div.mappingDiv div {
+        border: 0px none transparent;
+    }
+
+html.lte8 div#walkingdirections div.clear {
+    height: 30px;
+}
+
+div.mappingDiv svg.mapThumbnail {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    margin: 0;
+    background-color: lightgray;
+}
+
+div.mappingDiv img {
+    margin-top: 0px;
+}
+
+html.lte8 div.mappingDiv img {
+    margin-top: -1px;
+    margin-left: -1px;
+    outline: 250px solid lightgray;
+}
+
+html.lte8 div.mappingDiv svg.mapThumbnail {
+    margin-top: -2px;
+    margin-left: -2px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 2px;
+    background-color: lightgray;
+}
+
+html.ie9 div.mappingDiv {
+    padding-bottom: 4px;
+}
+
+div#walkingdirections div.directionsDiv {
+    float: left;
+    width: 55%;
+}
+
+div.ljMapPage div.ui-content .ljContainer .ljNavBar .ui-btn-active {
+    border-bottom: 1px solid #009de0;
+}
+
+div.ljNavBar li:before {
+    content: "";
+    color: transparent;
+}
+
+div.ljNavBar ul {
+    list-style: none;
+}
+
+div#drivingdirections div.ui-content .ljContainer .ljDirectionsContainer {
+    padding: 0.5em 3.125em;
+}
+
+div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer {
+    padding: 0.5em 1em;
+}
+
+    div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer .loadingDiv {
+        padding: 0.5em 3.125em;
+        min-height: 500px;
+        background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer #directionsPanel {
+        margin: 0 -3.125em;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer #directionsPanel div.adp-summary {
+            margin-left: 1em;
+        }
+
+        div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer #directionsPanel table.adp-directions {
+            margin-right: 1em;
+            width: 97%;
+            margin-left: 1em;
+        }
+
+        div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer #directionsPanel div.adp-legal {
+            padding: 0 1em;
+        }
+
+html.lte8 div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+    width: 22em;
+    float: left;
+}
+
+    html.lte8 div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+        padding: 0 0 0.5em 2.5em;
+    }
+
+html.lte9 ul.directions {
+    list-style-type: decimal;
+}
+
+fieldset.outer legend.mainTitle {
+    color: #0099ff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.18em;
+    width: 100%;
+}
+
+#data div.ljContainer legend.mainTitle {
+    color: #0099ff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.18em;
+    width: 100%;
+}
+
+fieldset.outer legend.mainTitle a {
+    color: #0099ff;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+    fieldset.outer legend.mainTitle a.HasUnderline {
+        text-decoration: underline;
+    }
+
+    fieldset.outer legend.mainTitle a:visited {
+        color: #0099ff;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+    }
+
+fieldset.outer legend.mainTitle span {
+    display: block;
+    color: #4FB304;
+    padding: 1em 0 0 0;
+}
+
+fieldset.outer.compensateHeight {
+    min-height: 1em;
+    text-align: center;
+}
+
+div.ljContainer h2 {
+    font-size: 1.8em;
+    margin: 0.5em 0;
+}
+
+fieldset.outer label.from,
+fieldset.outer label.to {
+    font-weight: bold;
+    font-size: 1.25em;
+    padding: 0.7em 10px 0 0;
+}
+
+form fieldset label {
+    color: #333;
+}
+
+div.ljContainer div.ljContainerFooter[style] {
+    background: #fff!important;
+}
+
+div.ljContainer div.ljContainerFooter {
+    background: #fff!important;
+    padding: 50px;
+    width: 100%;
+    margin: 0 -50px -50px;
+    position: relative;
+    background: #f4f4f4 url(../images/ljFooterContainer_re.png) repeat-x 0 0;
+    border-radius: 0px 0px 12px 12px;
+    -moz-border-radius: 0px 0px 12px 12px;
+    -webkit-border-radius: 0px 0px 12px 12px;
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+
+div.ljContainer span.ljSeparatorSmall {
+    background: transparent url(../images/ljSeparator_small.png) no-repeat center center;
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+    div.ljContainer span.ljSeparatorSmall.map {
+        padding: 4px 0;
+    }
+
+div.ljContainer span.ljSeparatorBig {
+    background: transparent url(../images/ljSeparator_big.png) no-repeat center center;
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+div.ljContainer div.ljContainerFooter span.ljSeparatorSmall {
+    background: transparent url(../images/ljSeparator_small.png) no-repeat center top;
+    display: block;
+    height: 5px;
+    position: absolute;
+    width: 100%;
+    top: -1px;
+    left: 0;
+}
+
+div.ljContainer span.ljHelpArrow {
+    background: transparent url(../images/ljHelpArrow.png) no-repeat 0 0;
+    width: 78px;
+    height: 95px;
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: -61px;
+    z-index: 100;
+}
+
+div.ljContainer fieldset.outer span.ljHelpArrow {
+    top: 57px;
+}
+
+div.ljContainer #to span.ljHelpArrow {
+    display: block;
+    position: absolute;
+    top: 12px;
+    z-index: 100;
+}
+
+div.ljFooter {
+    background: #efefef;
+    padding: 1em 3.125em;
+    width: 800px;
+    margin: 1em auto;
+    -webkit-border-radius: 12px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+    border-radius: 12px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    /* useful if you don't want a bg color from leaking outside the border: */
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+    div.ljFooter .ui-grid-b {
+        color: #666;
+    }
+
+        div.ljFooter .ui-grid-b h4.company {
+            font-weight: normal;
+            font-size: 1.3em;
+            margin: 0 0 0.5em;
+        }
+
+        div.ljFooter .ui-grid-b address {
+            font-size: 0.9em;
+            font-style: normal;
+        }
+
+        div.ljFooter .ui-grid-b dl {
+            font-size: 1em;
+            overflow: hidden;
+            margin: 0.3em 0;
+        }
+
+            div.ljFooter .ui-grid-b dl dt {
+                width: 30%;
+                float: left;
+                margin: 0;
+            }
+
+            div.ljFooter .ui-grid-b dl dd {
+                width: 70%;
+                float: left;
+                margin: 0;
+            }
+
+        div.ljFooter .ui-grid-b a {
+            font-weight: normal;
+        }
+
+.location-stack {
+    min-height: 10em;
+    position: relative;
+}
+    /* Stack all blocks to start */
+    .location-stack .ui-block-a {
+        width: 9.5%;
+        float: left;
+    }
+
+    .location-stack .ui-block-b {
+        width: 89.5%;
+        float: left;
+    }
+
+    .location-stack.selected .ui-block-a {
+        line-height: 2.1em;
+        font-weight: normal;
+    }
+
+    .location-stack.selected .ui-block-b span#foundField {
+        font-weight: bold;
+    }
+
+div#data .filterGrid .ui-block-a .ui-body {
+    padding-right: 0.3em;
+}
+
+div#data .filterGrid .ui-block-b .ui-body {
+    padding-left: 0.3em;
+}
+
+div#data .filterGrid .ui-block-a {
+    width: 78%;
+    padding-left: 0.6em;
+}
+
+div#data .filterGrid .ui-block-b {
+    width: 22%;
+}
+
+div#eventspage .filterGrid .ui-block-a .ui-body {
+    padding-right: 0.3em;
+}
+
+div#eventspage .filterGrid .ui-block-b .ui-body {
+    padding-left: 0.3em;
+}
+
+div#eventspage .filterGrid .ui-block-a {
+    width: 78%;
+    padding-left: 0.6em;
+}
+
+div#eventspage .filterGrid .ui-block-b {
+    width: 22%;
+}
+
+ul[data-role="listview"] {
+    background-color: white;
+}
+
+.textToShowWhenLarge {
+    display: inline!important;
+}
+
+.textToShowWhenSmall {
+    display: none!important;
+}
+
+/*
+ * Convert px values to ems by dividing by 16
+ * Em's are better since they are relative to font size and px are fixed
+ */
+
+@-ms-viewport {
+    width: device-width;
+}
+
+div#printable div.ljPrintableContainer p.startend {
+    white-space: pre-line;
+}
+
+    div#printable div.ljPrintableContainer p.startend span {
+        white-space: normal;
+    }
+
+div.pathingDiv {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+div.mappingParentDiv {
+    position: relative;
+    float: right;
+    min-width: 254px;
+    min-height: 254px;
+}
+
+body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 6.25em;
+    background: #4e4e4e;
+    padding-bottom: 5px;
+}
+
+body.featureAds div.ljMapPage#walkingdirections div.ui-content .ljContainer div.ljAdsFooter {
+    position: relative;
+    margin-top: 2em;
+}
+
+    body.featureAds div.ljMapPage#walkingdirections div.ui-content .ljContainer div.ljAdsFooter .ui-grid-b {
+        margin-bottom: -5px;
+    }
+
+body.featureAdsMobile div.ljMapPage div.ui-footer div.ljAdsFooter {
+    background: #4e4e4e;
+}
+
+    body.featureAdsMobile div.ljMapPage div.ui-footer div.ljAdsFooter a {
+        display: block;
+    }
+
+body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-body {
+    padding: 0;
+}
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-body a {
+        display: block;
+        text-align: left;
+    }
+
+        body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-body a img {
+            width: 300px;
+            height: 100px;
+        }
+
+.emailpopup .popupFields {
+    padding: 0;
+}
+
+.printingBackButton {
+    margin-left: 0.625em;
+}
+
+.ui-header .startOverButton.ui-btn {
+    top: 26px;
+    right: 2px;
+    /* width: 70px; */
+    left: auto;
+}
+
+@media print {
+    body {
+        background: #ffffff!important;
+    }
+
+    div#printable {
+        min-height: 0px!important;
+    }
+
+        /* div#printable div.ljPrintableContainer dl.startend dt {
+            width: 55px;
+            padding: 0 0 0.5em;
+            margin-bottom: 0;
+        }
+
+        div#printable div.ljPrintableContainer dl.startend dd {
+            width: 400px;
+            padding: 0 0 0.5em;
+            margin-bottom: 0;
+        }
+
+        div#printable div.mappingDiv {
+            width: 250px;
+            height: 254px;
+        }
+
+        div#printable div.ljPrintableContainer {
+            width: 630px;
+            min-height: 0px!important;
+            overflow: hidden!important;
+        }
+
+            div#printable div.ljPrintableContainer div.directionsContainer {
+                padding: 0;
+                page-break-before: avoid;
+            }
+
+                div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep {
+                    page-break-inside: avoid;
+                }
+
+                div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps {
+                }
+
+                    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps tr {
+                        page-break-inside: avoid;
+                    }
+
+                    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps td {
+                        page-break-inside: avoid;
+                    }
+
+                    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+                        /* width: 22em!important;
+                        margin-top: 0.4em; */
+                    /*}*/
+
+                        /* div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+                            line-height: 1.3em;
+                            padding: 0 0 0.5em 1em;
+                            list-style-position: inside;
+                        }
+
+                            div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li span {
+                            }
+
+    #printingBackButton {
+        display: none;
+    } */
+
+/*    div#printable div.ljPrintableContainer div.directionsContainer div.walkingStep ul.directions li span.directionIcon {*/
+        /*display: none;*/
+    /*} */
+
+    div#printable div.ljPrintableContainer div.directionsContainer {
+        padding: 0;
+        page-break-before: avoid;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep {
+            page-break-inside: avoid;
+        }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps {
+        }
+
+            div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps tr {
+                page-break-inside: avoid;
+            }
+
+            div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps td {
+                page-break-inside: avoid;
+            }
+}
+
+@media (max-width: 320px) {
+    div.ui-content {
+        overflow-x: visible;
+    }
+
+    .summaryLogo {
+        max-width: 100%;
+    }
+
+    fieldset.onCampus {
+        width: 100%;
+    }
+
+    fieldset.popupFields legend {
+        font-size: 1.1em;
+    }
+
+    div.appHeader {
+        min-height: 50px;
+    }
+
+    div.ljContainer fieldset.autocomplete ul.autocompleteSuggestions {
+        padding: 0;
+        position: relative !important;
+        z-index: 1000;
+        max-width: 222px;
+    }
+
+    a.getDirectionsButton {
+        text-align: center;
+        width: 100%;
+    }
+
+        a.getDirectionsButton .ui-btn-inner {
+            font-size: 1.2em;
+            padding: 0.6em;
+            text-align: center;
+        }
+
+    div.popupPrompt .getDirectionsButton {
+        width: 100%;
+    }
+
+        a.getDirectionsButton .ui-btn-inner .ui-icon,
+        div.popupPrompt .getDirectionsButton .ui-icon {
+            display: none;
+        }
+
+    fieldset.outer legend {
+        font-size: 0.8em;
+        font-weight: normal;
+        padding: 0;
+        line-height: 1.3em;
+    }
+
+    .location-stack.selected .ui-block-a {
+        line-height: 1.3em;
+    }
+
+    fieldset.outer legend.mainTitle {
+        font-size: 1.4em;
+    }
+
+
+    div.ljMapPage div.ui-content {
+        top: 72px;
+        bottom: 0;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer {
+            bottom: 0;
+        }
+
+            div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+                top: 9.4em;
+            }
+
+    #driving.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11.5em;
+    }
+
+    div.ljMapPage dl.startend dt {
+        width: 14%;
+    }
+
+    div.ljMapPage dl.startend dd {
+        width: 80%;
+    }
+
+    fieldset.outer .ui-block-b {
+        font-size: .8em;
+    }
+
+    fieldset.outer legend.from,
+    fieldset.outer legend.to {
+        font-weight: bold;
+        font-size: 0.8em;
+        padding: 1em 10px 0 0;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer div.mapNav {
+        text-align: center;
+    }
+
+    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+        width: 100%;
+        float: none;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+            padding: 0 0 0.5em 0.5em;
+            list-style-type: none;
+        }
+
+
+    div#data .filterGrid .ui-block-a {
+        width: 100%;
+    }
+
+    div#data .filterGrid .ui-block-b {
+        width: 100%;
+    }
+
+    div#data .filterGrid .ui-body {
+        text-align: center;
+        padding: 0;
+    }
+
+    div#data .filterGrid .ui-body {
+        text-align: center;
+        padding: 0;
+    }
+
+    div#eventspage .filterGrid .ui-block-a {
+        width: 100%;
+    }
+
+    div#eventspage .filterGrid .ui-block-b {
+        width: 100%;
+    }
+
+    div#eventspage .filterGrid .ui-body {
+        text-align: center;
+        padding: 0;
+    }
+
+    div#eventspage .filterGrid .ui-body {
+        text-align: center;
+        padding: 0;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer #SVGBox,
+    div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        bottom: 0;
+    }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter {
+        display: none;
+    }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer #SVGBox {
+        bottom: 0;
+    }
+
+    .ui-header .startOverButton.ui-btn {
+        top: 0px;
+    }
+}
+
+/* Footer Ad specific media queries. */
+@media (min-width: 481px) and (max-width: 580px) {
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-a {
+        width: 100%;
+    }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-b {
+        display: none;
+    }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-c {
+        display: none;
+    }
+}
+
+@media (min-width: 581px) and (max-width: 900px) {
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-a {
+        width: 50%;
+    }
+
+        body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-a a {
+            text-align: right;
+        }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-b {
+        width: 50%;
+        display: block;
+    }
+
+        body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-b a {
+            text-align: left;
+        }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter .ui-block-c {
+        display: none;
+    }
+}
+
+
+@media (min-width: 321px) and (max-width: 480px) {
+    div.ui-content {
+        overflow-x: visible;
+    }
+
+    .summaryLogo {
+        max-width: 100%;
+    }
+
+    a.getDirectionsButton .ui-btn-inner {
+        font-size: 1.5em;
+        padding: 0.6em;
+    }
+
+    a.getDirectionsButton .ui-icon-lj-arrow {
+        margin-top: -6px!important;
+    }
+
+    div.ljContainer fieldset.autocomplete ul.autocompleteSuggestions {
+        padding: 0;
+        position: relative !important;
+        z-index: 1000;
+        max-width: 222px;
+    }
+
+    div.ljMapPage div.ui-content {
+        bottom: 0;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer {
+            bottom: 0;
+        }
+
+            div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+                top: 9.4em;
+            }
+
+    #driving.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11.5em;
+    }
+
+    div.popupPrompt .getDirectionsButton {
+        width: 100%;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+        div.popupPrompt .getDirectionsButton .ui-btn-inner {
+            font-size: 1em;
+        }
+
+        a.getDirectionsButton .ui-btn-inner .ui-icon,
+        div.popupPrompt .getDirectionsButton .ui-icon {
+            display: none;
+        }
+
+    fieldset.outer legend.mainTitle {
+        font-size: 1.9em;
+    }
+
+    fieldset.outer legend {
+        font-size: 0.8em;
+        font-weight: normal;
+        padding: 0;
+        line-height: 1.3em;
+    }
+
+    div.ljMapPage dl.startend dt {
+        width: 14%;
+    }
+
+    div.ljMapPage dl.startend dd {
+        width: 80%;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer div.mapNav {
+        text-align: center;
+    }
+
+    fieldset.outer legend.from,
+    fieldset.outer legend.to {
+        font-weight: bold;
+        font-size: 1em;
+        padding: .8em 10px 0 0;
+    }
+
+    div#data .filterGrid .ui-block-a {
+        width: 60%;
+    }
+
+    div#data .filterGrid .ui-block-b {
+        width: 40%;
+    }
+
+    div#eventspage .filterGrid .ui-block-a {
+        width: 60%;
+    }
+
+    div#eventspage .filterGrid .ui-block-b {
+        width: 40%;
+    }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer #SVGBox {
+        bottom: 0;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer #SVGBox,
+    div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        bottom: 0;
+    }
+
+    body.featureAds div.ljMapPage div.ui-content .ljContainer div.ljAdsFooter {
+        display: none;
+    }
+
+    .ui-header .startOverButton.ui-btn {
+        top: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    div.ui-content {
+        overflow-x: visible;
+    }
+
+    .ui-page .ui-header .startOverButton.ui-btn {
+        margin: 20px 2px 0 0;
+    }
+
+    div[data-role="page"] a.getDirectionsButton.ui-btn:after {
+        display: none;
+    }
+
+    fieldset.onCampusButtons {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    fieldset.popupFields legend {
+        font-size: 1.1em;
+    }
+
+    div.placeholderContainer img {
+        border-top: 1px solid red;
+    }
+
+    div.ljContainer {
+        background: #fff!important;
+        margin: 0 -15px;
+        padding: 2.8em 1em 0;
+    }
+
+    #drivingdirections div.ljContainer,
+    #walkingdirections div.ljContainer {
+        padding: 0.5em 0 0;
+    }
+
+    div.ljContainer div.ljContainerFooter {
+        margin: 0 -1em 0;
+        padding: 3em 1em;
+    }
+
+    div.ljContainer span.ljHelpArrow,
+    div.ljContainer #to span.ljHelpArrow {
+        display: none;
+    }
+
+    div.ljMapPage a.fullMap {
+        display: none;
+    }
+
+    div.ljMapPage div.ui-content {
+        top: 0px;
+        padding-top: 0;
+    }
+
+    div.ljMapPage div.appHeader {
+        display: none;
+    }
+
+    div.appHeader {
+        min-height: 50px;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer {
+        padding: 0.5em 1em 0;
+        top: 0;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer div.mapHeader {
+            padding: 1em 0;
+        }
+
+            div.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+                display: block;
+                font-size: 1.4em;
+                padding: 0 0 0.5em;
+                margin: 0;
+                text-align: center;
+            }
+
+        div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+            top: 9.4em;
+        }
+
+    div#walking.ljMapPage div.ui-content .ljContainer #SVGBox {
+        top: 8.8em;
+    }
+
+    #driving.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 7em;
+    }
+
+    div#drivingdirections div.ui-content .ljContainer .ljDirectionsContainer {
+        padding: 0.5em 0em;
+    }
+
+    body.featureAds div#drivingdirections div.ui-content .ljContainer .ljDirectionsContainer {
+        padding: 0.5em 0em;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer {
+        padding: 0.5em 1em;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer .ljDirectionsContainer #directionsPanel {
+            margin: 0;
+        }
+
+    div.ljMapPage div.ui-content .ljContainer .headerButtons {
+        top: 0.2em;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer .headerButtons .printButton {
+            display: none;
+        }
+
+    #drivingdirections.ljMapPage div.ui-content .ljContainer .headerButtons,
+    #walkingdirections.ljMapPage div.ui-content .ljContainer .headerButtons {
+        right: 0.1em;
+    }
+
+    div#walkingdirections div.mappingParentDiv {
+        display: none;
+    }
+
+    div#walkingdirections div.mappingDiv {
+        display: none;
+    }
+
+    div#walkingdirections div.directionsDiv {
+        float: left;
+        clear: left;
+        width: 100%;
+    }
+
+    div.walkingSteps div.walkingStep.bothVisible ul.directions {
+        float: none !important;
+    }
+
+    div.walkingSteps div.walkingStep.bothVisible div.mappingDiv {
+        float: none !important;
+    }
+
+    table.walkingSteps div.walkingStep.bothVisible ul.directions {
+        float: none !important;
+    }
+
+    table.walkingSteps div.walkingStep.bothVisible div.mappingDiv {
+        float: none !important;
+    }
+
+    div#printable div.ljPrintableContainer {
+        width: inherit !important;
+    }
+
+    div#lookup div.ljContainer,
+    div#data div.ljContainer {
+        margin: 0 -15px;
+        padding-bottom: 2.8em;
+    }
+
+    div#data div.ljContainer {
+        padding-bottom: 1em;
+    }
+
+    div#eventspage div.ljContainer {
+        margin: 0 -15px;
+        padding-bottom: 2.8em;
+    }
+
+    div#eventspage div.ljContainer {
+        padding-bottom: 1em;
+    }
+
+    fieldset.onCampus {
+        width: 80%;
+    }
+
+    /* Grid for inline From and To */
+    .location-stack .ui-block-a {
+        width: 16.5%;
+        float: left;
+    }
+
+    .location-stack .ui-block-b {
+        width: 83.5%;
+        float: left;
+    }
+
+    div.ljFooter {
+        margin: 0 -15px;
+        width: auto;
+        padding: 1em;
+        text-align: center;
+        -webkit-border-radius: 0; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+        border-radius: 0; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    }
+
+        div.ljFooter .ui-grid-b .ui-block-a,
+        div.ljFooter .ui-grid-b .ui-block-b {
+            border: 0;
+        }
+
+            div.ljFooter .ui-grid-b .ui-block-a .ui-body {
+                padding: 0;
+            }
+
+            div.ljFooter .ui-grid-b .ui-block-b .ui-body {
+                padding: 0;
+            }
+
+        div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+            padding: 0;
+        }
+
+        div.ljFooter .ui-grid-b h4.company {
+            font-weight: normal;
+            font-size: 1.3em;
+            margin: auto;
+        }
+
+        div.ljFooter .ui-grid-b address {
+            font-size: 0.9em;
+            font-style: normal;
+            padding: 0.5em 0 0 0;
+        }
+
+        div.ljFooter .ui-grid-b a {
+            font-weight: normal;
+        }
+
+        div.ljFooter .ui-grid-b dl {
+            margin: 0 auto;
+            width: 12em;
+        }
+
+        div.ljFooter .ui-grid-b dd {
+            text-align: left;
+        }
+
+    #data form {
+        margin: 0 -1em;
+    }
+        /* remove margin so that the table within can reach the edge of the phone screen */
+        #data form .ui-table-columntoggle-btn {
+            margin: 0 1em 0.5em 0;
+        }
+
+        #data form .ui-btn.backBtn {
+            margin: 0 0 1em 1em;
+        }
+
+    #eventspage form {
+        margin: 0 -1em;
+    }
+        /* remove margin so that the table within can reach the edge of the phone screen */
+        #eventspage form .ui-table-columntoggle-btn {
+            margin: 0 1em 0.5em 0;
+        }
+
+        #eventspage form .ui-btn.backBtn {
+            margin: 0 0 1em 1em;
+        }
+
+    div.ljMapPage dl.startend {
+        padding: 0 0.5em 0.5em;
+    }
+
+        div.ljMapPage dl.startend dt {
+            width: auto;
+        }
+
+        div.ljMapPage dl.startend dt,
+        div.ljMapPage dl.startend dd {
+            display: inline;
+            margin: 0;
+            font-size: 0.8em;
+            vertical-align: text-top;
+            padding: 0 0 0 5px;
+        }
+
+        div.ljMapPage dl.startend dd {
+            white-space: nowrap;
+            width: 60%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+            div.ljMapPage dl.startend dd a.changeButton {
+                display: none;
+            }
+
+
+    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+        width: 100%;
+        float: none;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+            padding: 0 0 0.5em 0.5em;
+            list-style-type: none;
+        }
+
+    .textToShowWhenLarge {
+        display: none!important;
+    }
+
+    .textToShowWhenSmall {
+        display: inline!important;
+    }
+}
+
+@media (max-width: 600px) {
+    table#destination-list-table tr th {
+        display: none;
+    }
+
+    table#destination-list-table tr td {
+        display: none;
+    }
+
+    table#destination-list-table tr th:first-child {
+        display: table-cell;
+    }
+
+    table#destination-list-table tr td:first-child {
+        display: table-cell;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    div.ui-content {
+        overflow-x: visible;
+    }
+
+    .ui-page .ui-header .startOverButton.ui-btn {
+        top: 20px;
+    }
+
+    fieldset.onCampusButtons {
+        width: 25%;
+        margin: 0 auto;
+    }
+
+    div.placeholderContainer img {
+        border-top: 1px solid blue;
+    }
+
+    div.ljContainer {
+        background: #fff!important;
+        margin: 0 -15px;
+        padding: 2.8em 1em 0;
+    }
+
+        div.ljContainer div.ljContainerFooter {
+            margin: 0 -1em 0;
+            padding: 3em 1em;
+        }
+
+    #drivingdirections div.ljContainer,
+    #walkingdirections div.ljContainer {
+        padding: 0.5em 0 0;
+    }
+
+    fieldset.outer legend.mainTitle {
+        font-size: 1.9em;
+    }
+
+    div.ljContainer span.ljHelpArrow,
+    div.ljContainer #to span.ljHelpArrow {
+        display: none;
+    }
+
+    div.ljMapPage div.ui-content {
+        top: 72px;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer {
+            padding: 0.5em 1em 0;
+            top: 5px;
+        }
+
+    div#drivingdirections .ljMapPage div.ui-content div.ljContainer,
+    div#walkingdirections.ljMapPage div.ui-content div.ljContainer {
+        padding: 0.5em 0 0;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer div.mapHeader {
+        padding: 1em 0;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+            display: block;
+            font-size: 1.4em;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+    div.ljMapPage div.ui-content .ljContainer div.mapNav {
+        width: 100%;
+        float: none;
+        padding: 0.5em 0 0;
+        text-align: center;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 9.4em;
+    }
+
+    div#walking.ljMapPage div.ui-content .ljContainer #SVGBox {
+        top: 13.8em;
+    }
+
+    #driving.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11em;
+    }
+
+    div#walkingdirections div.mappingParentDiv {
+        display: none;
+    }
+
+    div#walkingdirections div.mappingDiv {
+        display: none;
+    }
+
+    div#walkingdirections div.directionsDiv {
+        width: 100%;
+    }
+
+    div.appHeader {
+        min-height: 50px;
+    }
+
+    div#lookup div.ljContainer,
+    div#data div.ljContainer {
+        margin: 0 -15px;
+        padding-bottom: 2.8em;
+    }
+
+    div#data div.ljContainer {
+        padding-bottom: 1em;
+    }
+
+    div#data .filterGrid .ui-block-a {
+        width: 70%;
+    }
+
+    div#data .filterGrid .ui-block-b {
+        width: 30%;
+    }
+
+    div#eventspage div.ljContainer {
+        margin: 0 -15px;
+        padding-bottom: 2.8em;
+    }
+
+    div#eventspage div.ljContainer {
+        padding-bottom: 1em;
+    }
+
+    div#eventspage .filterGrid .ui-block-a {
+        width: 70%;
+    }
+
+    div#eventspage .filterGrid .ui-block-b {
+        width: 30%;
+    }
+
+    fieldset.onCampus {
+        width: 52%;
+    }
+
+    /* Grid for inline From and To */
+    .location-stack .ui-block-a {
+        width: 13.5%;
+        float: left;
+    }
+
+    .location-stack .ui-block-b {
+        width: 86.5%;
+        float: left;
+    }
+
+    div.ljFooter {
+        margin: 0 -15px;
+        width: auto;
+        padding: 1em;
+        text-align: center;
+        -webkit-border-radius: 0; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+        border-radius: 0; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+    }
+
+        div.ljFooter .ui-grid-b .ui-block-a,
+        div.ljFooter .ui-grid-b .ui-block-b,
+        div.ljFooter .ui-grid-b .ui-block-c {
+            border: 0;
+            width: 100%;
+        }
+
+            div.ljFooter .ui-grid-b .ui-block-a .ui-body {
+                padding: 0;
+            }
+
+            div.ljFooter .ui-grid-b .ui-block-b .ui-body {
+                padding: 0;
+            }
+
+            div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+                padding: 0;
+            }
+
+        div.ljFooter .ui-grid-b h4.company {
+            font-weight: normal;
+            font-size: 1.3em;
+            margin: auto;
+        }
+
+        div.ljFooter .ui-grid-b address {
+            font-size: 0.9em;
+            font-style: normal;
+            padding: 0.5em 0 0 0;
+        }
+
+        div.ljFooter .ui-grid-b a {
+            font-weight: normal;
+        }
+
+        div.ljFooter .ui-grid-b dl {
+            margin: 0 auto;
+            width: 12em;
+        }
+
+        div.ljFooter .ui-grid-b dd {
+            text-align: left;
+        }
+
+    #data form {
+        margin: 0 -1em;
+    }
+        /* remove margin so that the table within can reach the edge of the phone screen */
+        #data form .ui-table-columntoggle-btn {
+            margin: 0 1em 0.5em 0;
+        }
+
+        #data form .ui-btn.backBtn {
+            margin: 0 0 1em 1em;
+        }
+
+    #eventspage form {
+        margin: 0 -1em;
+    }
+        /* remove margin so that the table within can reach the edge of the phone screen */
+        #eventspage form .ui-table-columntoggle-btn {
+            margin: 0 1em 0.5em 0;
+        }
+
+        #eventspage form .ui-btn.backBtn {
+            margin: 0 0 1em 1em;
+        }
+
+    div.ljMapPage dl.startend dt {
+        width: 10%;
+    }
+
+    div.ljMapPage dl.startend dd {
+        width: 85%;
+    }
+
+    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+        width: 40%;
+        float: left;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+            padding: 0 0 0.5em 2.5em;
+        }
+
+
+    div.popupPrompt {
+        width: 450px;
+    }
+
+    div.emailpopup {
+        width: 450px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    div.ui-content {
+        overflow-x: visible;
+    }
+
+    fieldset.onCampusButtons {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    div.placeholderContainer img {
+        border-top: 1px solid yellow;
+    }
+
+    div.ljContainer {
+        background: #fff!important;
+        padding: 50px;
+        margin: 0 auto;
+        width: auto;
+        -webkit-border-radius: 12px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+        border-radius: 12px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+        /* useful if you don't want a bg color from leaking outside the border: */
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        -webkit-box-shadow: 0px 0px 10px 0px #666; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+        box-shadow: 0px 0px 10px 0px #666; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+    }
+
+    div.ljMapPage div.ui-content {
+        top: 98px;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer {
+            padding: 0.5em 0 0 0;
+            margin: 0 15px;
+            width: auto;
+            top: 5px;
+        }
+
+            div.ljMapPage div.ui-content .ljContainer div.mapHeader {
+                padding: 1em 1em 1.2em 1em;
+            }
+
+                div.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+                    display: block;
+                    font-size: 1.4em;
+                    margin: 0;
+                    width: 50%;
+                }
+
+                div.ljMapPage div.ui-content .ljContainer div.mapHeader .ui-btn {
+                    margin-top: 0;
+                }
+
+                div.ljMapPage div.ui-content .ljContainer div.mapHeader span.currentStep {
+                    line-height: 2em;
+                }
+
+            div.ljMapPage div.ui-content .ljContainer div.mapNav {
+                text-align: right;
+                position: absolute;
+                float: none;
+                right: 1em;
+                top: 0.5em;
+                padding: 0.5em 0 0.5em 0.5em;
+            }
+
+    div.appHeader {
+        min-height: 50px;
+    }
+
+    div#walkingdirections.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+        width: 100%;
+    }
+
+    div#driving.ljMapPage div.ui-content .ljContainer div.mapHeader h1,
+    div#drivingdirections.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+        width: 76%;
+    }
+
+    div#driving.ljMapPage div.ui-content .ljContainer div.mapNav,
+    div#drivingdirections.ljMapPage div.ui-content .ljContainer div.mapNav {
+        width: 20%;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11.6em;
+    }
+
+    #driving.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11em;
+    }
+
+    div#walkingdirections div.mappingDiv {
+        width: 45%;
+    }
+
+    html.lte8 div#walkingdirections div.mappingDiv {
+        width: 250px;
+    }
+
+    div#walkingdirections div.directionsDiv {
+        width: 55%;
+    }
+
+    div.appHeader {
+        margin: 0 auto;
+        width: auto;
+        padding: 0 1em;
+        min-height: 50px;
+    }
+
+        div.appHeader.ui-bar-a {
+            background: transparent;
+            border: 0;
+            padding: 10px 18px 0!important;
+        }
+
+            div.appHeader.ui-bar-a .startOverButton.ui-btn {
+                margin: 26px 10px 0 0;
+            }
+
+    /* Grid for inline From and To */
+    .location-stack .ui-block-a {
+        width: 9.5%;
+        float: left;
+    }
+
+    .location-stack .ui-block-b {
+        width: 89.5%;
+        float: left;
+    }
+
+
+
+    div.ljFooter {
+        background: #efefef;
+        padding: 1em;
+        width: auto;
+        margin: 1em auto;
+        -webkit-border-radius: 12px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+        border-radius: 12px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+        /* useful if you don't want a bg color from leaking outside the border: */
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+    }
+
+        div.ljFooter .ui-grid-b .ui-block-a,
+        div.ljFooter .ui-grid-b .ui-block-b {
+            border-right: 2px solid #777;
+        }
+
+            div.ljFooter .ui-grid-b .ui-block-a .ui-body {
+                padding-left: 0;
+            }
+
+            div.ljFooter .ui-grid-b .ui-block-b .ui-body {
+                padding-left: 47px;
+                padding-right: 20px;
+            }
+
+        div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+            padding-right: 0;
+            text-align: center;
+        }
+
+        div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+            padding: 1em 4.3em;
+        }
+
+
+    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+        width: 55%;
+        float: left;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+            padding: 0 0 0.5em 2.5em;
+        }
+
+
+    div.popupPrompt {
+        width: 450px;
+    }
+
+    div.emailpopup {
+        width: 450px;
+    }
+}
+
+/* #### Desktops 1024px min #### */
+@media (min-width: 1024px) {
+    div.ui-content {
+        overflow-x: visible;
+    }
+
+    div.placeholderContainer img.placehold {
+        border-top: 1px solid red;
+    }
+
+    div.ljFooter .ui-grid-b .ui-body {
+        min-height: 90px;
+    }
+
+    div.ljFooter .ui-grid-b .ui-block-a,
+    div.ljFooter .ui-grid-b .ui-block-b {
+        border-right: 2px solid #777;
+    }
+
+        div.ljFooter .ui-grid-b .ui-block-a .ui-body {
+            padding-left: 0;
+        }
+
+        div.ljFooter .ui-grid-b .ui-block-b .ui-body {
+            padding-left: 47px;
+            padding-right: 20px;
+        }
+
+    div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    div.ljFooter .ui-grid-b .ui-block-c .ui-body {
+        padding: 1em 4.3em;
+    }
+
+    div.ljContainer {
+        background: #fff;
+        padding: 30px 50px 50px;
+        margin: 0 auto;
+        width: 800px;
+        -webkit-border-radius: 12px; /* Android ≤ 1.6, iOS 1-3.2, Safari 3-4 */
+        border-radius: 12px; /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+        /* useful if you don't want a bg color from leaking outside the border: */
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        -webkit-box-shadow: 0px 0px 10px 0px #666; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+        box-shadow: 0px 0px 10px 0px #666; /* Chrome 6+, Firefox 4+, IE 9+, iOS 5+, Opera 10.50+ */
+    }
+
+    div.ljMapPage div.ui-content {
+        top: 98px;
+    }
+
+        div.ljMapPage div.ui-content .ljContainer {
+            width: 900px;
+            padding: 0.5em 0 0 0;
+            top: 5px;
+        }
+
+            div.ljMapPage div.ui-content .ljContainer div.mapHeader {
+                padding: 1em 1em 1.2em 1em;
+            }
+
+                div.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+                    display: block;
+                    font-size: 1.4em;
+                    margin: 0;
+                    width: 56%;
+                    padding: 0 0 0.2em 0;
+                }
+
+                div.ljMapPage div.ui-content .ljContainer div.mapHeader .ui-btn {
+                    margin-top: 0;
+                }
+
+                div.ljMapPage div.ui-content .ljContainer div.mapHeader span.currentStep {
+                    line-height: 2em;
+                }
+
+            div.ljMapPage div.ui-content .ljContainer div.mapNav {
+                text-align: right;
+                position: absolute;
+                float: none;
+                right: 1em;
+                top: 0em;
+                padding: 0.5em 0 0.5em 0.5em;
+            }
+
+    div#driving.ljMapPage div.ui-content .ljContainer div.mapHeader h1,
+    div#drivingdirections.ljMapPage div.ui-content .ljContainer div.mapHeader h1 {
+        width: 75%;
+    }
+
+    div#driving.ljMapPage div.ui-content .ljContainer div.mapNav,
+    div#drivingdirections.ljMapPage div.ui-content .ljContainer div.mapNav {
+        width: 20%;
+    }
+
+    div.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11.3em;
+    }
+
+    #driving.ljMapPage div.ui-content .ljContainer .ljMapContainer {
+        top: 11em;
+    }
+
+    div.appHeader {
+        margin: 0 auto;
+        width: 900px;
+    }
+
+
+    /* Grid for inline From and To */
+    .location-stack .ui-block-a {
+        width: 9.5%;
+        float: left;
+    }
+
+    .location-stack .ui-block-b {
+        width: 89.5%;
+        float: left;
+    }
+
+    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+        width: 55%;
+        float: left;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+            padding: 0 0 0.5em 2.5em;
+        }
+
+
+    div.popupPrompt {
+        width: 450px;
+    }
+
+    div.emailpopup {
+        width: 450px;
+    }
+}
+
+div.placeholderContainer {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+}
+
+    div.placeholderContainer img.placehold {
+        position: relative;
+        display: block;
+    }
+
+div#printable table.adp-directions {
+    width: 100%;
+}
+
+div#printable div.ljPrintableContainer {
+    max-width: 630px;
+}
+
+    div#printable div.ljPrintableContainer h1 {
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+    div#printable div.ljPrintableContainer h2 {
+        margin: 0 0 0.5em;
+        font-size: 1.1em;
+        border-bottom: 2px solid #999;
+        font-weight: normal;
+    }
+
+    div#printable div.ljPrintableContainer h1,
+    div#printable div.ljPrintableContainer h2 {
+        padding: 0 0 0.2em;
+        color: #666;
+        text-shadow: none;
+    }
+
+    div#printable div.ljPrintableContainer h4 {
+        margin: 1em 0 0.5em 0;
+    }
+
+    div#printable div.ljPrintableContainer div.ui-grid-a .ui-block-a {
+        width: 55%;
+    }
+
+    div#printable div.ljPrintableContainer div.ui-grid-a .ui-block-b {
+        width: 42%;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+        float: right;
+    }
+
+div.padding0.ui-body {
+    padding: 0!important;
+}
+
+div#printable div.ljPrintableContainer .printFooter {
+    border-top: 1px solid #999;
+    color: #666;
+    font-size: 12px;
+    padding: 5px 0 0 0;
+    margin: 8px 0 0 0;
+    clear: both;
+}
+
+
+div#printable div.ljPrintableContainer dl.startend dt {
+    width: 55px;
+    padding: 0 0 0.5em;
+    margin-bottom: 0;
+}
+
+
+div#printable div.ljPrintableContainer dl.startend dd {
+    width: 400px;
+    padding: 0 0 0.5em;
+    margin-bottom: 0;
+}
+
+div#printable div.ljPrintableContainer div.directionsContainer {
+    padding: 2.5em 0 0 0;
+}
+
+    div#printable div.ljPrintableContainer div.directionsContainer div.walkingStepsDiv {
+        background: url(../images/ajax-loader.gif) no-repeat 50% 50%;
+        min-height: 5em;
+        min-width: 5em;
+    }
+
+    div#printable div.ljPrintableContainer div.directionsContainer div.coverUp {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+    }
+
+    div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps {
+        background: #fff;
+        width:100%;
+    }
+
+        div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep {
+            overflow: hidden;
+            background: #fff;
+        }
+
+            div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions {
+                list-style-position: outside;
+            }
+
+                div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep ul.directions li {
+                    border-bottom: 1px solid #000;
+                    color: #000;
+                    margin: 0.5em 0 0.5em 0;
+                    position: relative;
+                    left: -8px;
+                }
+
+            div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep div.mappingDiv {
+                margin-right: 0.6em;
+                float: right;
+                width: 250px;
+            }
+
+html.lte8 div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep div.mappingDiv {
+    border: 2px solid #000;
+}
+
+div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep.onlyMaps div.mappingDiv {
+    float: left;
+}
+
+div#printable div.ljPrintableContainer div.directionsContainer table.walkingSteps div.walkingStep.onlyDirections ul.directions {
+    width: 100%;
+}
+
+
+html.ie8 ul.directions {
+    list-style-type: decimal;
+}
+
+ul.directions {
+    padding: 0 0 0 0;
+}
+
+    ul.directions li {
+        color: #696969;
+        padding: 0 0 1em 2.5em;
+        overflow: hidden;
+        line-height: 1.7em;
+    }
+        /*html.lte9 ul.directions li span.directionIcon{padding-left:30px;}*/
+        /* ul.directions li span.directionIcon {
+            display: block;
+            width: 38px;
+            height: 25px;
+            background: transparent url(../images/ljSprite-turnbyturn.png) no-repeat 0 0;
+        }
+
+            ul.directions li span.directionIcon.start {
+                background-position: -216px 0;
+            }
+
+            ul.directions li span.directionIcon.right {
+                background-position: -72px 0;
+            }
+
+            ul.directions li span.directionIcon.left {
+                background-position: -361px 0;
+            }
+
+            ul.directions li span.directionIcon.straight {
+                background-position: -288px 0;
+            }
+
+            ul.directions li span.directionIcon.elevator {
+                background-position: -503px 0;
+            }
+
+            ul.directions li span.directionIcon.end {
+                background-position: -144px 0;
+            }
+
+            ul.directions li span.directionIcon.parking {
+                background-position: -432px 0;
+            }
+            ul.directions li span.directionIcon.skip {
+                background-position: -502px 0;
+            } */
+
+div#legendPanel {
+    background: #fff;
+}
+
+ul.legendList {
+    list-style-type: none;
+    margin: 0px;
+    padding: 2.1em 0px 0 2em;
+}
+
+    ul.legendList li {
+        margin-bottom: 1em;
+    }
+
+        ul.legendList li img {
+            display: inline;
+            vertical-align: bottom;
+            margin-right: 15px;
+        }
+
+        ul.legendList li span.legendText {
+            vertical-align: middle;
+            line-height: 2em;
+            padding: 0 0 0 1em;
+        }
+
+        ul.legendList li span.legendIcon {
+            background: transparent url(../images/ljSprite-legend-50percent.png) no-repeat 0 0;
+            display: block;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 2em;
+        }
+
+            ul.legendList li span.legendIcon.atm {
+                background-position: -50px 0;
+            }
+
+            ul.legendList li span.legendIcon.busstop {
+                background-position: 0 0;
+            }
+
+            ul.legendList li span.legendIcon.elevators {
+                background-position: -100px 0;
+            }
+
+            ul.legendList li span.legendIcon.parking {
+                background-position: -150px 0;
+            }
+
+            ul.legendList li span.legendIcon.restroom {
+                background-position: -200px 0;
+            }
+
+            ul.legendList li span.legendIcon.vending {
+                background-position: -250px 0;
+            }
+
+            ul.legendList li span.legendIcon.food {
+                background-position: -300px 0;
+            }
+
+            ul.legendList li span.legendIcon.gift {
+                background-position: -350px 0;
+            }
+
+            ul.legendList li span.legendIcon.rx {
+                background-position: -400px 0;
+            }
+
+            ul.legendList li span.legendIcon.help {
+                background-position: -450px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend10 {
+                background-position: -500px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend11 {
+                background-position: -550px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend12 {
+                background-position: -600px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend13 {
+                background-position: -650px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend14 {
+                background-position: -700px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend15 {
+                background-position: -750px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend16 {
+                background-position: -800px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend17 {
+                background-position: -850px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend18 {
+                background-position: -900px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend19 {
+                background-position: -950px 0;
+            }
+
+            ul.legendList li span.legendIcon.legend20 {
+                background-position: -1000px 0;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#data .table-stripe tbody tr.odd:hover td,
+#data .table-stripe tbody tr.odd:hover th,
+#data .ui-table tr:hover {
+    background: #99ccff;
+}
+
+#data .table-stripe tbody tr.even td,
+#data .table-stripe tbody tr.even th {
+    background: #f0f0f0;
+}
+
+#data .table-stripe tbody tr.odd td,
+#data .table-stripe tbody tr.odd th {
+    background: #e0e0e0;
+}
+
+#data .ui-table tbody tr {
+    cursor: pointer;
+}
+
+    #data .ui-table tbody tr a {
+        font-size: 13px;
+        text-decoration: none;
+        color: #000000;
+        font-weight: normal;
+    }
+
+    #data .ui-table tbody tr td {
+        font-size: 13px;
+        text-decoration: none;
+        color: #000000;
+        font-weight: normal;
+    }
+
+        #data .ui-table tbody tr td:first-child a {
+            text-decoration: underline;
+            color: #336699;
+        }
+
+#eventspage .table-stripe tbody tr.even:hover td,
+#eventspage .table-stripe tbody tr.even:hover th,
+#eventspage .ui-table tr:hover {
+    background: #99ccff;
+}
+
+#eventspage .table-stripe tbody tr.even td,
+#eventspage .table-stripe tbody tr.even th {
+    background: #f0f0f0;
+}
+
+#eventspage .table-stripe tbody tr.odd td,
+#eventspage .table-stripe tbody tr.odd th {
+    background: #e0e0e0;
+}
+
+#eventspage .ui-table tbody tr {
+    cursor: pointer;
+}
+
+    #eventspage .ui-table tbody tr a {
+        font-size: 13px;
+        text-decoration: none;
+        color: #000000;
+        font-weight: normal;
+    }
+
+    #eventspage .ui-table tbody tr td {
+        font-size: 13px;
+        text-decoration: none;
+        color: #000000;
+        font-weight: normal;
+    }
+
+        #eventspage .ui-table tbody tr td:first-child a {
+            text-decoration: underline;
+            color: #336699;
+        }
+
+html.lte8 #data .ui-table tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+html.lte8 #eventspage .ui-table tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+ul.autocompleteSuggestions a.ui-btn.listItemHover {
+    background: #dfdfdf /*{a-bhover-background-color}*/;
+    border-color: #bbbbbb /*{a-bhover-border}*/;
+    color: #2f3e46 /*{a-bhover-color}*/;
+    text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #ffffff /*{a-bhover-shadow-color}*/;
+}
+
+p.startend {
+    margin: 0;
+}
+
+    p.startend span {
+        display: inline;
+        padding: 0 1em 0 0;
+        white-space: nowrap;
+    }
+
+dl.startend {
+    padding: 0 1em 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+    dl.startend dt {
+        font-weight: bold;
+        float: left;
+        clear: left;
+        width: 7%;
+        padding: 0.5em 0 1em 0;
+    }
+
+    dl.startend dd {
+        float: left;
+        clear: right;
+        margin: 0 0 0 0.5em;
+        width: 90%;
+        position: relative;
+        padding: 0.5em 0 1em 0;
+    }
+
+        dl.startend dd a.changeButton {
+            position: absolute;
+            top: 28%;
+            right: -10px;
+        }
+
+        dl.startend dt.to,
+        dl.startend dd.to {
+            padding-top: 0;
+        }
+
+
+body .ui-overlay-a.ui-popup-screen.in {
+    opacity: 0.7;
+    background: #000;
+}
+
+body .ui-overlay-a.ui-popup-screen.in {
+    opacity: 0.7;
+    background: #000;
+}
+
+div.ui-popup.popupPrompt {
+    background: #ffffff;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #000;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #000;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #000;
+}
+
+div.warningMessage {
+    overflow-wrap: break-word;
+    font-size: 10px;
+}
+
+table.tablesorter thead tr .header {
+    cursor: pointer;
+}
+
+table.tablesorter thead tr .ui-icon-lj-sort {
+    float: right;
+    display: block;
+    margin: 2px 20px 0 0px;
+    vertical-align: middle;
+    background-image: url(themes/images/icons-18-white.png);
+    background-position: -36px 0px;
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: #339dff;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+tr.ui-bar-d {
+    border: 1px solid #00a5ec;
+    /* background: #00a5ec; */
+    /* removed for blue background */
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #444444;
+    /* background-image: -webkit-gradient(linear,left top,left bottom,from( #00b5FF ),to( #0094d4 ));
+    background-image: -webkit-linear-gradient( #00b5FF,#0094d4 );
+    background-image: -moz-linear-gradient( #00b5FF,#0094d4 );
+    background-image: -ms-linear-gradient( #00b5FF,#0094d4 );
+    background-image: -o-linear-gradient( #00b5FF,#0094d4 );
+    background-image: linear-gradient( #00b5FF,#0094d4 ); */
+}
+
+table.tablesorter thead tr .headerSortUp .ui-icon-lj-sort {
+    background-image: url(themes/images/icons-18-white.png);
+    background-position: -179px 0px;
+}
+
+table.tablesorter thead tr .headerSortDown .ui-icon-lj-sort {
+    background-image: url(themes/images/icons-18-white.png);
+    background-position: -215px 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+@media screen and (orientation: landscape) {
+    .ui-mobile .ui-page {
+        min-height: 100%;
+    }
+}
+
+/* css3 animations
+
+.arrow-animate {
+    -webkit-animation: cssAnimation 0.5s 2 ease-in-out;
+    -moz-animation: cssAnimation 0.5s 2 ease-in-out;
+    -o-animation: cssAnimation 0.5s 2 ease-in-out;
+}
+
+@-webkit-keyframes cssAnimation {
+    0% {
+        -webkit-transform: rotate(0deg) translate(0px);
+        transform: rotate(0deg) translate(0px);
+    }
+
+    70% {
+        -webkit-transform: rotate(0deg) translate(-10px);
+        transform: rotate(0deg) translate(-10px);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg) translate(0px);
+        transform: rotate(0deg) translate(0px);
+    }
+}
+
+@-moz-keyframes cssAnimation {
+    0% {
+        -moz-transform: rotate(0deg) translate(0px);
+        transform: rotate(0deg) translate(0px);
+    }
+
+    70% {
+        -moz-transform: rotate(0deg) translate(-10px);
+        transform: rotate(0deg) translate(-10px);
+    }
+
+    100% {
+        -moz-transform: rotate(0deg) translate(0px);
+        transform: rotate(0deg) translate(0px);
+    }
+}
+
+@-o-keyframes cssAnimation {
+    0% {
+        -o-transform: rotate(0deg) translate(-0px);
+        transform: rotate(0deg) translate(0px);
+    }
+
+    70% {
+        -o-transform: rotate(0deg) translate(-10px);
+        transform: rotate(0deg) translate(-10px);
+    }
+
+    100% {
+        -o-transform: rotate(0deg) translate(-0px);
+        transform: rotate(0deg) translate(0px);
+    }
+}
+    */
