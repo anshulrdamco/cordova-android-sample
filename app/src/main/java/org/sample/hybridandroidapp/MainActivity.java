@@ -50,7 +50,11 @@ public class MainActivity extends CordovaActivity
 
         loadUrl(launchUrl);
 
-        myWebView = (WebView) this.appView.getView();
+
+
+        /*
+
+              myWebView = (WebView) this.appView.getView();
 
         myWebView.setWebViewClient(new SystemWebViewClient((SystemWebViewEngine) this.appView.getEngine()){
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -62,8 +66,7 @@ public class MainActivity extends CordovaActivity
             }
         });
 
-
-        /*CordovaWebViewEngine wv = appView.getEngine();
+        CordovaWebViewEngine wv = appView.getEngine();
 
         SystemWebView swv = (SystemWebView) wv.getCordovaWebView();
 
